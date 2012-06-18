@@ -1,0 +1,120 @@
+= SendGrid WEB API gem for Rails 3 {<img src="https://secure.travis-ci.org/kylejginavan/sendgrid_webapi.png"/>}[http://travis-ci.org/kylejginavan/sendgrid_webapi]
+
+SendGrid WEB API gem allow you to retrieve information such as statistics, bounces, spam reports, unsubscribes, send email and other information.
+
+== Rails 3 configuration
+
+In your Gemfile:
+
+    gem 'sendgrid_webapi'
+
+== Usage examples
+
+=== Creating client object:
+
+    client = SendGridWebApi::Client.new("user_name", "password")
+
+== Modules
+
+=== Bounces
+This module allows you to retrieve and delete email addresses that have bounced from emails that you've delivered.
+
+    client.bounces.get(options)
+
+    client.bounces.delete(:email => "email@example.com", :foor => "bar")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapibounces
+
+=== Blocks
+This module allows you to retrieve and delete email addresses that were blocked by their ISP. These emails are not suppressed and are just for information.
+
+    client.blocks.get(options)
+
+    client.blocks.delete(:email => "email@example.com", :foor => "bar")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiblocks
+
+=== Invalid Email
+This module allows you to retrieve and delete email addresses that you've sent to that are invalid email addresses.
+
+    client.invalid_emails.get(options)
+
+    client.invalid_emails.delete(:email => "email@example.com", :foor => "bar")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiinvalidemails
+
+=== Spam Report
+This module allows you to retrieve and delete email addresses that have marked your emails as SPAM.
+
+    client.spam.get(options)
+
+    client.spam.delete(:email => "email@example.com", :foor => "bar")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapispamreports
+
+=== Unsubscribes
+This module allows you to add, retrieve and delete email addresses that were unsubscribed from your emails.
+
+    client.unsubscribes.add(:email => "email@example.com", :foor => "bar")
+
+    client.unsubscribes.get(options)
+
+    client.unsubscribes.delete(:email => "email@example.com", :foor => "bar")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiunsubscribes
+
+=== Parse Email
+This module allows you to add, edit, or delete your email parse settings.
+
+    client.parse_emails.add(:hostname => "www.example.com", :url => "www.domain.com/parse.php", :spam_check => 1)
+
+    client.parse_emails.get(options)
+
+    client.parse_emails.delete(:hostname => "www.example.com")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiparse
+
+=== Event Notification URL
+This module allows you to add, edit, or delete an event notification URL for your account.
+
+    client.event_notification.set(:url => "http://www.yourposturlhere.com")
+
+    client.event_notification.get(options)
+
+    client.event_notification.delete(options)
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/event-notification-url
+
+
+=== Stats
+This module allows you to retrieve statistical data on a range of metrics including requests, bounces, spam reports, categories, and others.
+
+    client.stats.get(options)
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/event-notification-url
+
+=== Profile
+This module allows you to retrieve and update your profile information such as credentials and email address.
+
+    client.profile.get(options)
+    
+    client.profile.set(options)
+    
+    client.profile.set_password(:password => "foo", :confirm_password => "foo")
+
+    client.profile.set_username(:username => "yournewusername@domain.com")
+    
+    client.profile.set_email(:email => "yournewusername@domain.com")
+
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiprofile
+
+
+== HTTP Return codes
+
+=== 4xx
+
+The API call had an error in the parameters. The gem will return ApiException raise.
+
+=== 5xx
+
+The API call was unsuccessful. The gem will return ApiException raise.
