@@ -77,7 +77,6 @@ describe SendGridWebApi::Client do
 
     describe "#parse_email" do      
       it "should set parse email" do
-        client.parse_email.delete(:hostname => "www.example.com")
         client.parse_email.set(:hostname => "www.example.com", :url => "www.mydomain.com/parse.php", :spam_check => "1").
           should == {"message"=>"success"}
       end
