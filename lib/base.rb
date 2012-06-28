@@ -23,7 +23,7 @@ module SendGridWebApi
     end
 
     def query_post_api url, options
-      puts builder_options(options)
+      builder_options(options)
       session.post(url, builder_options(options)).body
     end
     
