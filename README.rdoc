@@ -333,3 +333,8 @@ The API call had an error in the parameters. The gem will return ApiException ra
 === 5xx
 
 The API call was unsuccessful. The gem will return ApiException raise.
+
+== CONTRIBUTORS:
+
+* Kyle J. Ginavan.
+* Mauro Torres - http://github.com/chebyte
