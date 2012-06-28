@@ -1,0 +1,99 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.limit.json?user=chebyte&credits=400&task=increment&api_user=user&api_key=pass
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept: 
+      - "*/*"
+      user-agent: 
+      - Ruby
+      connection: 
+      - close
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.65
+      date: 
+      - Wed, 27 Jun 2012 16:07:45 GMT
+      content-type: 
+      - application/json
+      connection: 
+      - close
+      x-powered-by: 
+      - PHP/5.3.2-1ubuntu4.14
+      cache-control: 
+      - private
+      set-cookie: 
+      - sendgrid_frontend=e789bcb5b2079185afe874f5ae269684:c2430ff118374b778b0da5ccdb8eea76caea06cf; expires=Fri, 27-Jul-2012 16:07:44 GMT; path=/; httponly
+      content-encoding: 
+      - gzip
+      vary: 
+      - Accept-Encoding
+      content-length: 
+      - "46"
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
+        AA==
+
+    http_version: "1.1"
+  recorded_at: Wed, 27 Jun 2012 16:07:45 GMT
+- request: 
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.limit.json?user=chebyte&task=retrieve&api_user=user&api_key=pass
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept: 
+      - "*/*"
+      user-agent: 
+      - Ruby
+      connection: 
+      - close
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.65
+      date: 
+      - Wed, 27 Jun 2012 16:07:48 GMT
+      content-type: 
+      - application/json
+      connection: 
+      - close
+      x-powered-by: 
+      - PHP/5.3.2-1ubuntu4.14
+      cache-control: 
+      - private
+      set-cookie: 
+      - sendgrid_frontend=b854a52b81e01c4cd03b855401ddba4e:2d0a4b60f09b97b17c6d967a49cfa0e46073e9a9; expires=Fri, 27-Jul-2012 16:07:47 GMT; path=/; httponly
+      content-encoding: 
+      - gzip
+      vary: 
+      - Accept-Encoding
+      content-length: 
+      - "77"
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA4quVkouSk3JLFGyUjJQ0oFy4otScxMz84BiFgYg0ZzEYpBY
+        cSpImZGBoZGugZmukblSbSwAAAD//wMARujp00AAAAA=
+
+    http_version: "1.1"
+  recorded_at: Wed, 27 Jun 2012 16:07:48 GMT
+recorded_with: VCR 2.1.1

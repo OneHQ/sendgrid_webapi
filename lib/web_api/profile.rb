@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class Profile < Client
+module SendGridWebApi::Modules
+  class Profile < SendGridWebApi::Client
     def get options = {}
       profile_get_url = "profile.get.json"
       query_api(profile_get_url, options)

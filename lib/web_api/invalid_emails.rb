@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class InvalidEmail < Client
+module SendGridWebApi::Modules
+  class InvalidEmail < SendGridWebApi::Client
     def get options = {}
       invalid_email_get_url = "invalidemails.get.json"
       query_api(invalid_email_get_url, options)

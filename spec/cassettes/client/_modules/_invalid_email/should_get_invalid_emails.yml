@@ -1,0 +1,42 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: https://sendgrid.com/api/invalidemails.get.json?api_user=user&api_key=pass
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept: 
+      - "*/*"
+      user-agent: 
+      - Ruby
+      connection: 
+      - close
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.65
+      date: 
+      - Wed, 27 Jun 2012 16:18:56 GMT
+      content-type: 
+      - text/html
+      transfer-encoding: 
+      - chunked
+      connection: 
+      - close
+      content-encoding: 
+      - gzip
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA4uOBQApu0wNAgAAAA==
+
+    http_version: "1.1"
+  recorded_at: Wed, 27 Jun 2012 16:18:57 GMT
+recorded_with: VCR 2.1.1

@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class EventNotification < Client
+module SendGridWebApi::Modules
+  class EventNotification < SendGridWebApi::Client
     def get options = {}
       event_get_url = "eventposturl.get.json"
       query_api(event_get_url, options)

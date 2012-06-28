@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class ParseEmail < Client
+module SendGridWebApi::Modules
+  class ParseEmail < SendGridWebApi::Client
     def get options = {}
       parse_email_get_url = "parse.get.json"
       query_api(parse_email_get_url, options)

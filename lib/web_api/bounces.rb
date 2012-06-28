@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class Bounce < Client
+module SendGridWebApi::Modules
+  class Bounce < SendGridWebApi::Client
     def get options = {}
       bounce_get_url = "bounces.get.json"
       query_api(bounce_get_url, options)

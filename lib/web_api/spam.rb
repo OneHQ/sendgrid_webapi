@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class Spam < Client
+module SendGridWebApi::Modules
+  class Spam < SendGridWebApi::Client
     def get options = {}
       spam_get_url = "spamreports.get.json"
       query_api(spam_get_url, options)

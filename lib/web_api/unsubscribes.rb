@@ -1,5 +1,5 @@
-module SendGridWebApi
-  class Unsubscribe < Client
+module SendGridWebApi::Modules
+  class Unsubscribe < SendGridWebApi::Client
     def get options = {}
       unsubscribe_get_url = "unsubscribes.get.json"
       query_api(unsubscribe_get_url, options)

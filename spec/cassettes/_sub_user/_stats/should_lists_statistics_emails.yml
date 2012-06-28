@@ -1,0 +1,53 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.stats.json?user=chebyte&api_user=user&api_key=pass
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      accept-encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      accept: 
+      - "*/*"
+      user-agent: 
+      - Ruby
+      connection: 
+      - close
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      server: 
+      - nginx/0.7.65
+      date: 
+      - Wed, 27 Jun 2012 16:06:51 GMT
+      content-type: 
+      - application/json
+      connection: 
+      - close
+      x-powered-by: 
+      - PHP/5.3.2-1ubuntu4.14
+      cache-control: 
+      - private
+      set-cookie: 
+      - sendgrid_frontend=a6afeef7a8371d641cef86de3fe1b8e5:4488ece6ffc810d40424bdb9cc8b37ceee047225; expires=Fri, 27-Jul-2012 16:06:49 GMT; path=/; httponly
+      content-encoding: 
+      - gzip
+      vary: 
+      - Accept-Encoding
+      content-length: 
+      - "155"
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA2SOSw7CMAxE7+J1K4UsQOpVEIrymYVFmoR8ukHcnYpQqYXd
+        +NkznuuTnK6giaQ4yVGcR3mhgTIeDaUWmsRADp4XZLjPZGILFn2TkaCr2qMW
+        SjPFZjbHmz9uPdt7lzEhdFWSnldDzPVg/sUcFu3ZKcyafW/l45bWAq/l1S7/
+        S7Y3r9sbAAD//wMAsNzMf/YAAAA=
+
+    http_version: "1.1"
+  recorded_at: Wed, 27 Jun 2012 16:06:51 GMT
+recorded_with: VCR 2.1.1
