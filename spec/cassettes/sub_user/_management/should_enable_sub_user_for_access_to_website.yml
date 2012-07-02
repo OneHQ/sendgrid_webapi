@@ -1,0 +1,49 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.website_enable.json?api_key=pass&api_user=user&user=chebyte3
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      Accept-Encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept: 
+      - "*/*"
+      User-Agent: 
+      - Ruby
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Server: 
+      - nginx/0.7.65
+      Date: 
+      - Mon, 02 Jul 2012 14:35:00 GMT
+      Content-Type: 
+      - application/json
+      Connection: 
+      - keep-alive
+      X-Powered-By: 
+      - PHP/5.3.2-1ubuntu4.14
+      Cache-Control: 
+      - private
+      Set-Cookie: 
+      - sendgrid_frontend=e94a966b09e46a7a886f8cb3e4665160:b5d50e823fddf380ab129729041fdfd2136eea29; expires=Wed, 01-Aug-2012 14:34:36 GMT; path=/; httponly
+      Content-Encoding: 
+      - gzip
+      Vary: 
+      - Accept-Encoding
+      Content-Length: 
+      - "46"
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
+        AA==
+
+    http_version: 
+  recorded_at: Mon, 02 Jul 2012 14:35:00 GMT
+recorded_with: VCR 2.1.1

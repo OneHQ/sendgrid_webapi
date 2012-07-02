@@ -3,6 +3,7 @@ require 'spec_helper'
 describe "client" do
   let(:client) { SendGridWebApi::Client.new("user", "pass") }
   
+  
   describe "#base", :vcr do
     it "should return api url" do
       client.base_url.should eql "https://sendgrid.com/api/"
@@ -114,7 +115,7 @@ describe "client" do
     describe "#profile", :vcr do      
       it "should get profile" do
         client.profile.get.
-          should == [{"username"=>"app5254374@heroku.com", "email"=>"app5254374@heroku.com", "active"=>"true", "first_name"=>"Reseller", "last_name"=>"Customer", "address"=>"555 Any Street", "address2"=>"", "city"=>"City", "state"=>"State", "zip"=>"90000", "country"=>"US", "phone"=>"555-555-5555", "website"=>"http://Website", "website_access"=>"true"}]
+          should == [{"username"=>"app4238669@heroku.com", "email"=>"app4238669@heroku.com", "active"=>"true", "first_name"=>"Reseller", "last_name"=>"Customer", "address"=>"555 Any Street", "address2"=>"", "city"=>"City", "state"=>"State", "zip"=>"90000", "country"=>"US", "phone"=>"555-555-5555", "website"=>"http://Website", "website_access"=>"true"}]
       end
     
       it "should set first name" do

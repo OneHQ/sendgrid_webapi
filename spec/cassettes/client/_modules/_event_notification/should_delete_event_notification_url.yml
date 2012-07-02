@@ -2,43 +2,41 @@
 http_interactions: 
 - request: 
     method: get
-    uri: https://sendgrid.com/api/eventposturl.delete.json?api_user=user&api_key=pass
+    uri: https://sendgrid.com/api/eventposturl.delete.json?api_key=pass&api_user=user
     body: 
       encoding: US-ASCII
       string: ""
     headers: 
-      accept-encoding: 
+      Accept-Encoding: 
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      accept: 
+      Accept: 
       - "*/*"
-      user-agent: 
+      User-Agent: 
       - Ruby
-      connection: 
-      - close
   response: 
     status: 
       code: 200
       message: OK
     headers: 
-      server: 
+      Server: 
       - nginx/0.7.65
-      date: 
-      - Wed, 27 Jun 2012 16:19:31 GMT
-      content-type: 
+      Date: 
+      - Mon, 02 Jul 2012 14:43:18 GMT
+      Content-Type: 
       - application/json
-      connection: 
-      - close
-      x-powered-by: 
+      Connection: 
+      - keep-alive
+      X-Powered-By: 
       - PHP/5.3.2-1ubuntu4.14
-      cache-control: 
+      Cache-Control: 
       - private
-      set-cookie: 
-      - sendgrid_frontend=0abd0fad995330bad14be337eb0b5c3e:08227d7a12d82c295d700449b1f0f3ce84839f1b; expires=Fri, 27-Jul-2012 16:19:31 GMT; path=/; httponly
-      content-encoding: 
+      Set-Cookie: 
+      - sendgrid_frontend=1302f6bc5e172cb57f5a77faad5ddd0b:f26b9aad2dbd5b3b724d53817547aaa5c4a2516d; expires=Wed, 01-Aug-2012 14:42:54 GMT; path=/; httponly
+      Content-Encoding: 
       - gzip
-      vary: 
+      Vary: 
       - Accept-Encoding
-      content-length: 
+      Content-Length: 
       - "46"
     body: 
       encoding: ASCII-8BIT
@@ -46,6 +44,6 @@ http_interactions:
         H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
         AA==
 
-    http_version: "1.1"
-  recorded_at: Wed, 27 Jun 2012 16:19:31 GMT
+    http_version: 
+  recorded_at: Mon, 02 Jul 2012 14:43:19 GMT
 recorded_with: VCR 2.1.1

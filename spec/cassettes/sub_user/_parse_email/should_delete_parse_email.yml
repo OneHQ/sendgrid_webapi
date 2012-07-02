@@ -1,0 +1,94 @@
+--- 
+http_interactions: 
+- request: 
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.parse.json?api_key=pass&api_user=user&hostname=www.example.com&task=delete&user=chebyte3
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      Accept-Encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept: 
+      - "*/*"
+      User-Agent: 
+      - Ruby
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Server: 
+      - nginx/0.7.65
+      Date: 
+      - Mon, 02 Jul 2012 14:36:11 GMT
+      Content-Type: 
+      - application/json
+      Connection: 
+      - keep-alive
+      X-Powered-By: 
+      - PHP/5.3.2-1ubuntu4.14
+      Cache-Control: 
+      - private
+      Set-Cookie: 
+      - sendgrid_frontend=86ca2dc89933d6ad531a8edef8c5646a:9f4f6a19ee580ca35bd7eea43d15d9fed062a46f; expires=Wed, 01-Aug-2012 14:35:47 GMT; path=/; httponly
+      Content-Encoding: 
+      - gzip
+      Vary: 
+      - Accept-Encoding
+      Content-Length: 
+      - "46"
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
+        AA==
+
+    http_version: 
+  recorded_at: Mon, 02 Jul 2012 14:36:12 GMT
+- request: 
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.parse.json?api_key=pass&api_user=user&task=get&user=chebyte3
+    body: 
+      encoding: US-ASCII
+      string: ""
+    headers: 
+      Accept-Encoding: 
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept: 
+      - "*/*"
+      User-Agent: 
+      - Ruby
+  response: 
+    status: 
+      code: 200
+      message: OK
+    headers: 
+      Server: 
+      - nginx/0.7.65
+      Date: 
+      - Mon, 02 Jul 2012 14:36:13 GMT
+      Content-Type: 
+      - application/json
+      Connection: 
+      - keep-alive
+      X-Powered-By: 
+      - PHP/5.3.2-1ubuntu4.14
+      Cache-Control: 
+      - private
+      Set-Cookie: 
+      - sendgrid_frontend=937fa46f9cf7f50acef382339194a5c1:b0499a5310ea7f9d2fa301239a53097e5bc87adc; expires=Wed, 01-Aug-2012 14:35:49 GMT; path=/; httponly
+      Content-Encoding: 
+      - gzip
+      Vary: 
+      - Accept-Encoding
+      Content-Length: 
+      - "38"
+    body: 
+      encoding: ASCII-8BIT
+      string: !binary |
+        H4sIAAAAAAAAA6pWKkgsKk5VsoqOrQUAAAD//wMAJoy/QwwAAAA=
+
+    http_version: 
+  recorded_at: Mon, 02 Jul 2012 14:36:13 GMT
+recorded_with: VCR 2.1.1
