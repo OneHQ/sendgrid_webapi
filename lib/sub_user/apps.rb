@@ -21,5 +21,11 @@ module SendGridWebApi::SubUserModules
       options.merge!({:task => "getsettings"}) unless options[:task]
       query_api(APP_URL, options)
     end
+
+    def customize options = {}
+      options.merge!({:task => "setup"}) unless options[:task]
+      query_post_api(APP_URL, options)
+    end
+
   end
 end

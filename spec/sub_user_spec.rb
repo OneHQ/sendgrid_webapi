@@ -248,7 +248,7 @@ describe "#sub_user" do
       client.sub_user.apps.activate(:user => "chebyte", :name => "opentrack").
         should == {"message"=>"success"}
     end
-
+    
     it "should deactivate app" do
       client.sub_user.apps.deactivate(:user => "chebyte", :name => "opentrack").
         should == {"message"=>"success"}
@@ -257,6 +257,14 @@ describe "#sub_user" do
     it "should get current setting from one app" do
       client.sub_user.apps.current_settings(:user => "chebyte", :name => "eventnotify").
         should == {"settings"=>{"processed"=>"", "dropped"=>"", "deferred"=>"", "delivered"=>"", "bounce"=>"", "click"=>"", "open"=>"", "unsubscribe"=>"", "spamreport"=>"", "url"=>""}}
+    end
+    
+    it "should set current app" do
+      client.sub_user.apps.customize(:user => "chebyte", :name => "eventnotify", :processed => "1", :dropped => "1", :deferred => "1",
+          :delivered => "1", :delivered => "1", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", :url => "http://yourdomain.com/event.php").
+        should == {"message"=>"success"}
+      client.sub_user.apps.current_settings(:user => "chebyte", :name => "eventnotify").
+        should == {"settings"=>{"processed"=>"1", "dropped"=>"1", "deferred"=>"1", "delivered"=>"1", "bounce"=>"1", "click"=>"1", "open"=>"1", "unsubscribe"=>"1", "spamreport"=>"1", "url"=>"http://yourdomain.com/event.php"}}
     end
   end
 end
