@@ -321,6 +321,8 @@ This module allows you to setup subusers app settings.
     
     client.sub_user.apps.current_settings(:user => "sub_user", :name => "eventnotify")
     
+    client.sub_user.apps.customize(:user => "sub_user", :name => "eventnotify", :processed => "0", :dropped => "1", :deferred => "1", :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", :url => "http://someurl.com/listener"))    
+    
 * options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/filter-apps/
 
 
