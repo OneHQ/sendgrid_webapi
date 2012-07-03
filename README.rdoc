@@ -310,6 +310,14 @@ This module allows you to setup subusers parse settings.
 * options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/parse-settings/
 
 
+=== Authentication
+This module allows you to check subusers password to see if its valid.
+
+    client.sub_user.auth.login(:user => "sub_user", :password => "somepass").
+    
+* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/authenticate-a-subuser/
+
+
 === Apps
 This module allows you to setup subusers app settings.
 
