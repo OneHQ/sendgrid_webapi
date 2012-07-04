@@ -334,6 +334,34 @@ This module allows you to setup subusers app settings.
 * options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/filter-apps/
 
 
+== Helper
+
+=== Create Sub User
+this helper allows you to create a sub_user and enable apps that you want, passing a array with the sub_user data
+
+    user_hash = {:website => "someurl.com", :password => "somepass", :confirm_password => "somepass",
+               :first_name => "home", :last_name => "simpson", :address => "555 anystreet", :city =>  "any city",
+               :state => "CA" , :zip => "91234", :email => "email@email.com", :country => "US", :phone => "555-555"}
+  
+    apps = { :opentrack => {:name => "eventnotify", :processed => "0", :dropped => "1", :deferred => "1",
+                          :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", 
+                          :url => "https://agencieshq.com/sendgrid/v1/listener"},
+           :clicktrack => {:enable_text => "1"},
+           :opentrack => {}
+    }
+
+    users = ["username" => {:account => user_hash, :apps => apps, :assigned_ips => ["IP"]}]  
+    
+    create_sub_user_account("sendgrid user", "sendgrid pass", users)
+
+=== Run SendGrid Query
+this helper allows you run a sengrid request and raise if it doesn't return successfull
+
+    run_sendgrid_query("sendgrid user", "sendgrid pass") do
+      #some sendgrid request
+      @client.sub_user.apps.activate(:user => "user", :name => "twitter")
+    end
+
 == HTTP Return codes
 
 === 4xx

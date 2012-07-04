@@ -1,5 +1,5 @@
 require 'faraday'
-require 'cgi'
 require 'base'
+require 'helper'
 require 'webapi_client'
 require 'subuser_client'
