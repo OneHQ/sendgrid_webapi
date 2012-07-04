@@ -339,6 +339,8 @@ This module allows you to setup subusers app settings.
 === Create Sub User
 this helper allows you to create a sub_user and enable apps that you want, passing a array with the sub_user data
 
+define the data
+
     user_hash = {:website => "someurl.com", :password => "somepass", :confirm_password => "somepass",
                :first_name => "home", :last_name => "simpson", :address => "555 anystreet", :city =>  "any city",
                :state => "CA" , :zip => "91234", :email => "email@email.com", :country => "US", :phone => "555-555"}
@@ -351,6 +353,8 @@ this helper allows you to create a sub_user and enable apps that you want, passi
     }
 
     users = ["username" => {:account => user_hash, :apps => apps, :assigned_ips => ["IP"]}]  
+    
+call the helper
     
     create_sub_user_account("sendgrid user", "sendgrid pass", users)
 
