@@ -109,6 +109,13 @@ This module allows you to retrieve and update your profile information such as c
 * options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiprofile
 
 
+=== Mail
+This module allows you to send email.
+  
+  client.mail.send(:to => "test@test.com", :subject => "test", :text => "some body", :from => "test@example.com")
+  
+* options are available here: http://docs.sendgrid.com/documentation/api/web-api/mail/
+
 == SubUser
 
 === Creating client object:
