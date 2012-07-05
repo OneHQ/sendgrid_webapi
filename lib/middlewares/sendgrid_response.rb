@@ -11,8 +11,9 @@ module Faraday
       if result[/^[a-z ]+$/i]
         error_msg = result
       else
-        error_msg = JSON.parse(result)["error"]
+        error_msg = JSON.parse(result)["error"] || JSON.parse(result)["errors"]
       end
+      error_msg.to_s
     end
 
     def parse_body(body)
