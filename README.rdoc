@@ -359,7 +359,7 @@ define the data
            :opentrack => {}
     }
 
-    users = {"username" => {:account => user_hash, :apps => apps, :assigned_ips => ["IP"]}}
+    users = {"username" => {:account => user_hash, :applications => apps, :assigned_ips => ["IP"]}}
     
 call the helper
     

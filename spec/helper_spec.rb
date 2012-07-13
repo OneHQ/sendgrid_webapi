@@ -34,7 +34,7 @@ describe "helper" do
                :opentrack => {}
       }
   
-      @users = {"test-4" => {:account => user_hash, :apps => apps, :assigned_ips => ["74.63.231.33"]}}
+      @users = {"test-4" => {:account => user_hash, :applications => apps, :assigned_ips => ["74.63.231.33"]}}
       
     end
     
