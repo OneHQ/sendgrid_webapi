@@ -66,11 +66,11 @@ This module allows you to add, retrieve and delete email addresses that were uns
 === Parse Email
 This module allows you to add, edit, or delete your email parse settings.
 
-    client.parse_emails.add(:hostname => "www.example.com", :url => "www.domain.com/parse.php", :spam_check => 1)
+    client.parse_email.add(:hostname => "www.example.com", :url => "www.domain.com/parse.php", :spam_check => 1)
 
-    client.parse_emails.get(options)
+    client.parse_email.get(options)
 
-    client.parse_emails.delete(:hostname => "www.example.com")
+    client.parse_email.delete(:hostname => "www.example.com")
 
 * options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiparse
 
@@ -207,11 +207,11 @@ This module allows you to manage unsubscribes of your subusers.
 === Parse Email
 This module allows you to setup subusers parse settings
 
-    client.sub_user.parse_emails.add(:user => "sub_user", :hostname => "www.example.com", :url => "www.domain.com/parse.php", :spam_check => 1)
+    client.sub_user.parse_email.add(:user => "sub_user", :hostname => "www.example.com", :url => "www.domain.com/parse.php", :spam_check => 1)
 
-    client.sub_user.parse_emails.get(:user => "sub_user")
+    client.sub_user.parse_email.get(:user => "sub_user")
 
-    client.sub_user.parse_emails.delete(:user => "sub_user", :hostname => "www.example.com")
+    client.sub_user.parse_email.delete(:user => "sub_user", :hostname => "www.example.com")
 
 * options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/parse-settings/
 
@@ -303,18 +303,6 @@ Allow users to manage your subusers via iframe using our site
     client.sub_user.iframe.get(:user => "sub_user")
 
 * options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/automatic-login/
-
-
-=== Parse Email
-This module allows you to setup subusers parse settings.
-
-    client.sub_user.parse_emails.add(:user => "sub_user", :hostname => "www.example.com", :url => "www.domain.com/parse.php", :spam_check => 1)
-
-    client.sub_user.parse_emails.get(:user => "sub_user")
-
-    client.sub_user.parse_emails.delete(:user => "sub_user", :hostname => "www.example.com")
-
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/parse-settings/
 
 
 === Authentication
