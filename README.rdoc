@@ -23,7 +23,7 @@ This module allows you to retrieve and delete email addresses that have bounced 
 
     client.bounces.delete(:email => "email@example.com", :foor => "bar")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapibounces
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/bounces.html
 
 === Blocks
 This module allows you to retrieve and delete email addresses that were blocked by their ISP. These emails are not suppressed and are just for information.
@@ -32,7 +32,7 @@ This module allows you to retrieve and delete email addresses that were blocked 
 
     client.blocks.delete(:email => "email@example.com", :foor => "bar")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiblocks
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/blocks.html
 
 === Invalid Email
 This module allows you to retrieve and delete email addresses that you've sent to that are invalid email addresses.
@@ -41,7 +41,7 @@ This module allows you to retrieve and delete email addresses that you've sent t
 
     client.invalid_emails.delete(:email => "email@example.com", :foor => "bar")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiinvalidemails
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/invalid_emails.html
 
 === Spam Report
 This module allows you to retrieve and delete email addresses that have marked your emails as SPAM.
@@ -50,7 +50,7 @@ This module allows you to retrieve and delete email addresses that have marked y
 
     client.spam.delete(:email => "email@example.com", :foor => "bar")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapispamreports
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/spam_reports.html
 
 === Unsubscribes
 This module allows you to add, retrieve and delete email addresses that were unsubscribed from your emails.
@@ -61,7 +61,7 @@ This module allows you to add, retrieve and delete email addresses that were uns
 
     client.unsubscribes.delete(:email => "email@example.com", :foor => "bar")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiunsubscribes
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/unsubscribes.html
 
 === Parse Email
 This module allows you to add, edit, or delete your email parse settings.
@@ -72,7 +72,7 @@ This module allows you to add, edit, or delete your email parse settings.
 
     client.parse_email.delete(:hostname => "www.example.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiparse
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/parse_settings.html
 
 === Event Notification URL
 This module allows you to add, edit, or delete an event notification URL for your account.
@@ -83,7 +83,7 @@ This module allows you to add, edit, or delete an event notification URL for you
 
     client.event_notification.delete(options)
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/event-notification-url
+* options are available here: http://sendgrid.com/docs/API_Reference/Webhooks/event.html
 
 
 === Stats
@@ -91,30 +91,30 @@ This module allows you to retrieve statistical data on a range of metrics includ
 
     client.stats.get(options)
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/event-notification-url
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/Statistics/index.html
 
 === Profile
 This module allows you to retrieve and update your profile information such as credentials and email address.
 
     client.profile.get(options)
-    
+
     client.profile.set(options)
-    
+
     client.profile.set_password(:password => "foo", :confirm_password => "foo")
 
     client.profile.set_username(:username => "yournewusername@domain.com")
-    
+
     client.profile.set_email(:email => "yournewusername@domain.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/webapiprofile
+* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/profile.html
 
 
 === Mail
 This module allows you to send email.
-  
+
   client.mail.send(:to => "test@test.com", :subject => "test", :text => "some body", :from => "test@example.com")
-  
-* options are available here: http://docs.sendgrid.com/documentation/api/web-api/mail/
+
+* options are available here: http://sendgrid.com/docs/Code_Examples/ruby.html
 
 == SubUser
 
@@ -128,7 +128,7 @@ This module allows you to send email.
 == Modules
 
 === Management SubUsers
-Retrieve/Create/Enable/Disable your subusers. Change a subuser email address and username.
+Retrieve/Create/Enable/Disable your subusers. Change a subuser email address and username. Docs can be found here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/index.html
 
 Create a sub_user
 
@@ -157,14 +157,14 @@ Disable a subuser to login to the SendGrid.com website
 Allows you to update your subusers profile information
 
     client.sub_user.management.update(:user => "sub_user", :first_name => "change_named")
-  
+
     client.sub_user.management.update_password(:user => "sub_user", :password => "somepassword", :confirm_password => "somepassword")
 
     client.sub_user.management.update_username(:user => "sub_user", :username => "newusername")
-  
+
     client.sub_user.management.update_email(:user => "sub_user", :email => "newemail")
-  
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/subusers/  
+
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/subusers.html
 
 === Bounces
 This module allows you to manage bounce records of your subusers.
@@ -173,7 +173,7 @@ This module allows you to manage bounce records of your subusers.
 
     client.sub_user.bounces.delete(:user => "sub_user", :email => "email@example.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-subuser-api-v1/email-list-management/subuser-bounces/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/subuser_bounces.html
 
 === Invalid Email
 This module allows you to manage invalid emails of your subusers.
@@ -182,7 +182,7 @@ This module allows you to manage invalid emails of your subusers.
 
     client.sub_user.invalid_emails.delete(:user => "sub_user", :email => "email@example.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/subuser-invalid-emails/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/invalid_emails.html
 
 === Spam Report
 This module allows you to manage spam reports of your subusers.
@@ -191,7 +191,7 @@ This module allows you to manage spam reports of your subusers.
 
     client.sub_user.spam.delete(:user => "sub_user", :email => "email@example.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-subuser-api-v1/email-list-management/subuser-spam-reports/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/subuser_spam_reports.html
 
 === Unsubscribes
 This module allows you to manage unsubscribes of your subusers.
@@ -202,7 +202,7 @@ This module allows you to manage unsubscribes of your subusers.
 
     client.sub_user.unsubscribes.delete(:user => "sub_user", :email => "email@example.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-subuser-api-v1/email-list-management/subusers-unsubscribes/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/subuser_unsubscribes.html
 
 === Parse Email
 This module allows you to setup subusers parse settings
@@ -213,7 +213,7 @@ This module allows you to setup subusers parse settings
 
     client.sub_user.parse_email.delete(:user => "sub_user", :hostname => "www.example.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/parse-settings/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/parse_settings.html
 
 === Event Notification URL
 This module allows you to manage subusers event notification url.
@@ -224,7 +224,7 @@ This module allows you to manage subusers event notification url.
 
     client.sub_user.event_notification.delete(:user => "sub_user", :url => "http://www.yourposturlhere.com")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/event-notification-url/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/event_notification_url.html
 
 
 === Stats
@@ -232,38 +232,38 @@ This module allows you to see statistics regarding your subusers.
 
     client.sub_user.stats.get(:user => "sub_user")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/statistics/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/statistics.html
 
 === Limits
 This module allows you to manage the rate of emails your subusers are able to send
 
     client.sub_user.limits.get(:user => "sub_user")
-    
+
     client.sub_user.limits.set_credits(:user => "sub_user", :credits=> "200", :period=> "daily")
-    
+
     client.sub_user.limits.reset(:user => "sub_user", :credits=> "400", :period=> "daily")
-    
+
     client.sub_user.limits.increment_credits(:user => "sub_user", :credits=> "400")
-    
+
     client.sub_user.limits.decrement_credits(:user => "sub_user", :credits=> "400")
 
 To remove all limits from your sub_user
 
     client.sub_user.limits.delete(:user => "sub_user")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/account-limits/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/account_limits.html
 
 
 === Monitor Records
 Make sure your subusers arent sending out spam by getting a sample of their outgoing messages
 
     client.sub_user.monitor_records.create(:name => "testmonitor", :frequency => 10000, :email => "test@test.com")
-    
+
     client.sub_user.monitor_records.edit(:name => "testmonitor", :new_frequency => 10)
-    
+
     client.sub_user.monitor_records.add_user(:user => "sub_user", :name => "testmonitor")
-    
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/monitor-records/
+
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/monitor_records.html
 
 === IP Management
 List all IP addresses you have under your account and retrieve details about them
@@ -273,14 +273,14 @@ To obtain a complete list of all IP's and which are free, taken or available. Se
     client.sub_user.ip_management.get(:user => "sub_user")
 
 To get the ip that is using your sub_user
-  
+
     client.sub_user.ip_management.usage_ip(:user => "sub_user")
-    
-To assign one ip to your sub_user    
-  
+
+To assign one ip to your sub_user
+
     client.sub_user.ip_management.assign_ip(:user => "sub_user", :ip => ["IP1", "IP2"])
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/ip-management/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/ip_management.html
 
 === WhiteLabel
 Manage whitelabel settings for your subusers
@@ -294,39 +294,39 @@ To set a subusers whitelabel domain
     client.sub_user.whitelabel.add(:user => "sub_user", :mail_domain => "email.sendgrid.com")
 
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/whitelabel/
-    
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/whitelabel.html
+
 
 === IFrame
 Allow users to manage your subusers via iframe using our site
 
     client.sub_user.iframe.get(:user => "sub_user")
 
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/automatic-login/
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/automatic_login.html
 
 
 === Authentication
 This module allows you to check subusers password to see if its valid.
 
     client.sub_user.auth.login(:user => "sub_user", :password => "somepass").
-    
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/authenticate-a-subuser/
+
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/authenticate_a_subuser.html
 
 
 === Apps
 This module allows you to setup subusers app settings.
 
     client.sub_user.apps.list(:user => "sub_user")
-    
+
     client.sub_user.apps.activate(:user => "sub_user", :name => "opentrack")
 
     client.sub_user.apps.deactivate(:user => "sub_user", :name => "opentrack")
-    
+
     client.sub_user.apps.current_settings(:user => "sub_user", :name => "eventnotify")
-    
-    client.sub_user.apps.customize(:user => "sub_user", :name => "eventnotify", :processed => "0", :dropped => "1", :deferred => "1", :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", :url => "http://someurl.com/listener"))    
-    
-* options are available here: http://docs.sendgrid.com/documentation/api/customer-subuser-api/customer-api/filter-apps/
+
+    client.sub_user.apps.customize(:user => "sub_user", :name => "eventnotify", :processed => "0", :dropped => "1", :deferred => "1", :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", :url => "http://someurl.com/listener"))
+
+* options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/apps.html
 
 
 == Helper
@@ -339,18 +339,18 @@ define the data
     user_hash = {:website => "someurl.com", :password => "somepass", :confirm_password => "somepass",
                :first_name => "home", :last_name => "simpson", :address => "555 anystreet", :city =>  "any city",
                :state => "CA" , :zip => "91234", :email => "email@email.com", :country => "US", :phone => "555-555"}
-  
+
     apps = { :opentrack => {:name => "eventnotify", :processed => "0", :dropped => "1", :deferred => "1",
-                          :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", 
+                          :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1",
                           :url => "https://agencieshq.com/sendgrid/v1/listener"},
            :clicktrack => {:enable_text => "1"},
            :opentrack => {}
     }
 
     users = {"username" => {:account => user_hash, :applications => apps, :assigned_ips => ["IP"]}}
-    
+
 call the helper
-    
+
     create_sub_user_account("sendgrid user", "sendgrid pass", users)
 
 === Run SendGrid Query
