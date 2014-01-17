@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/bounces.delete.json?api_key=pass&api_user=user&email=test@example.com
+    uri: https://api.sendgrid.com/api/blocks.count.json?api_key=pass&api_user=user
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx/1.4.2
       Date:
-      - Fri, 17 Jan 2014 01:39:32 GMT
+      - Fri, 17 Jan 2014 01:37:40 GMT
       Content-Type:
       - text/html
       Transfer-Encoding:
@@ -30,7 +30,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"message": "Email does not exist"}'
+      string: '{"count": 0}'
     http_version: 
-  recorded_at: Fri, 17 Jan 2014 01:39:32 GMT
+  recorded_at: Fri, 17 Jan 2014 01:37:40 GMT
 recorded_with: VCR 2.8.0

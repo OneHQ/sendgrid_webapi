@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   s.add_development_dependency "rspec", "~> 2.10.0"
   s.add_development_dependency "webmock", "~> 1.8.7"
-  s.add_development_dependency "vcr", "~> 2.1.1"  
+  s.add_development_dependency "vcr", "~> 2.8.0"  
   s.add_dependency "faraday", "~> 0.8.0"
   s.add_dependency "json", "~> 1.8.0"
   

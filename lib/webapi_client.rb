@@ -5,7 +5,7 @@ module SendGridWebApi
     include SendGridWebApi::Modules
     
     def base_url
-      "https://sendgrid.com/api/"
+      "https://api.sendgrid.com/api/"
     end
     
   end

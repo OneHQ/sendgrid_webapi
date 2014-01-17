@@ -6,7 +6,7 @@ describe "client" do
   
   describe "#base", :vcr do
     it "should return api url" do
-      client.base_url.should eql "https://sendgrid.com/api/"
+      client.base_url.should eql "https://api.sendgrid.com/api/"
     end
   
     it "should return request url" do
@@ -27,6 +27,9 @@ describe "client" do
       end
       it "should try delete not existing block email" do
         client.blocks.delete(:email => "test@example.com").should == {"message"=>"Email does not exist"}
+      end
+      it "should get totals blocks" do
+        client.blocks.count.should eql({"count"=>0})
       end
     end
     
@@ -115,7 +118,7 @@ describe "client" do
     describe "#profile", :vcr do      
       it "should get profile" do
         client.profile.get.
-          should == [{"username"=>"app4238669@heroku.com", "email"=>"app4238669@heroku.com", "active"=>"true", "first_name"=>"Reseller", "last_name"=>"Customer", "address"=>"555 Any Street", "address2"=>"", "city"=>"City", "state"=>"State", "zip"=>"90000", "country"=>"US", "phone"=>"555-555-5555", "website"=>"http://Website", "website_access"=>"true"}]
+          should == [{"username"=>"user", "email"=>"user", "active"=>"true", "first_name"=>"Reseller", "last_name"=>"Customer", "address"=>"555 Any Street", "address2"=>"", "city"=>"City", "state"=>"State", "zip"=>"90000", "country"=>"US", "phone"=>"555-555-5555", "website"=>"http://Website", "website_access"=>"true"}]
       end
     
       it "should set first name" do

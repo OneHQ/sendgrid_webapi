@@ -1,95 +1,91 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&credits=400&period=daily&task=recurring&user=chebyte3
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&credits=400&period=daily&task=recurring&user=sendgrid_testuser3
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:35:29 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:24:49 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=5cbdeebc5a6a2887684276d276dd6bd6:080f29018e033f58b46d364fcf73f755c700f661; expires=Wed, 01-Aug-2012 14:35:05 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=7f4f4b55c69d02613df3c8293e9e6ea1:ba24b026ee02ca873d52e7890cad27f34c15d47f;
+        expires=Sun, 16-Feb-2014 01:24:49 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:35:29 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 01:24:49 GMT
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&task=retrieve&user=chebyte3
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&task=retrieve&user=sendgrid_testuser3
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:35:31 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:24:51 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '76'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=a348be6f99e2aeb39ea7e694e411e8eb:96915d9f7b537d158c94674fdd25b0c62d4e20a7; expires=Wed, 01-Aug-2012 14:35:06 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=9d5c72792c4755dfc77ff0cea9b15041:927857dbee60d54bf9f9b1803ef9c531ae00b704;
+        expires=Sun, 16-Feb-2014 01:24:51 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "76"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA4quVkouSk3JLFGyUjIxMFDSgXLji1JzEzPz4KI5icUgseJU
-        kEIjA0MjXQNzXQMjpdpYAAAAAP//AwAsBx8fQgAAAA==
-
+    body:
+      encoding: UTF-8
+      string: '[{"credit":"400","credit_remain":"400","last_reset":"2014-01-16"}]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:35:31 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:24:51 GMT
+recorded_with: VCR 2.8.0

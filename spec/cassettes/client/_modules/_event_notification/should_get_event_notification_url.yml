@@ -1,49 +1,47 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/api/eventposturl.get.json?api_key=pass&api_user=user
-    body: 
+    uri: https://api.sendgrid.com/api/eventposturl.get.json?api_key=pass&api_user=user
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:43:17 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:52:20 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '69'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=fbbde1d375bf0dd21a1dd7f6280d42c4:8c6e674179c1bf8e1c1de71ed232546e028fec5e; expires=Wed, 01-Aug-2012 14:42:52 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=2645ddaada41dfe921a85861ed60b651:3a8e6294a82301e43493fa0e9c2b5f4dfb746e7c;
+        expires=Sun, 16-Feb-2014 01:52:19 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "69"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA4quViotylGyUsooKSmwitGP0S8vL9erzC8tKsgvLgFKZaQW
-        peol5+cq1cYCAAAA//8DAEwaSHgsAAAA
-
+    body:
+      encoding: UTF-8
+      string: '[{"url":"http:\/\/www.yourposturlhere.com"}]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:43:17 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:52:20 GMT
+recorded_with: VCR 2.8.0

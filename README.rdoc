@@ -1,4 +1,4 @@
-= SendGrid WEB API gem for Rails 3 {<img src="https://secure.travis-ci.org/kylejginavan/sendgrid_webapi.png"/>}[http://travis-ci.org/kylejginavan/sendgrid_webapi]
+= SendGrid WEB API gem for Rails 3 {<img src="https://secure.travis-ci.org/kylejginavan/sendgrid_webapi.png"/>}[http://travis-ci.org/kylejginavan/sendgrid_webapi] {<img src="https://badge.fury.io/rb/sendgrid_webapi.png" alt="Gem Version" />}[http://badge.fury.io/rb/sendgrid_webapi] {<img src="https://codeclimate.com/github/kylejginavan/sendgrid_webapi.png" />}[https://codeclimate.com/github/kylejginavan/sendgrid_webapi]
 
 SendGrid WEB API gem allow you to retrieve information such as statistics, bounces, spam reports, unsubscribes, send email and other information.
 
@@ -6,7 +6,13 @@ SendGrid WEB API gem allow you to retrieve information such as statistics, bounc
 
 In your Gemfile:
 
-    gem 'sendgrid_webapi'
+for sendgrid v3 support
+
+    gem 'sendgrid_webapi', '0.0.3'
+
+for sendgrid v2 support
+
+    gem 'sendgrid_webapi', '0.0.2'
 
 == Usage examples
 
@@ -23,6 +29,8 @@ This module allows you to retrieve and delete email addresses that have bounced 
 
     client.bounces.delete(:email => "email@example.com", :foor => "bar")
 
+    client.blocks.count
+
 * options are available here: http://sendgrid.com/docs/API_Reference/Web_API/bounces.html
 
 === Blocks
@@ -31,6 +39,8 @@ This module allows you to retrieve and delete email addresses that were blocked 
     client.blocks.get(options)
 
     client.blocks.delete(:email => "email@example.com", :foor => "bar")
+
+    client.blocks.count
 
 * options are available here: http://sendgrid.com/docs/API_Reference/Web_API/blocks.html
 

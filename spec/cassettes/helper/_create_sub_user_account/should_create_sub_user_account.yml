@@ -1,318 +1,311 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.add.json?address=555%20anystreet&api_key=pass&api_user=user&city=any%20city&confirm_password=somepass&country=US&email=email@email.com&first_name=home&last_name=simpson&password=somepass&phone=555-555&state=CA&username=test-4&website=someurl.com&zip=91234
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.add.json?address=555%20anystreet&api_key=pass&api_user=user&city=any%20city&confirm_password=somepass&country=US&email=email@email.com&first_name=home&last_name=simpson&password=somepass&phone=555-555&state=CA&username=test-6&website=someurl.com&zip=91234
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:38 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:33 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=c8604632140a00d21fea27b26fdf74c0:bf395265d23634440039d895ba373f8b0287b65e; expires=Fri, 03-Aug-2012 19:24:36 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=f4a15d5403410b8d8ec6c27865f5494e:71c28077015409b5b68ad8c4a39995218834e0f0;
+        expires=Sun, 16-Feb-2014 02:05:32 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:38 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 02:05:33 GMT
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.enable.json?api_key=pass&api_user=user&user=test-4
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.enable.json?api_key=pass&api_user=user&user=test-6
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:42 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:35 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=95da4accc126f866ea44eeaf42c97943:a55d71089327d649ac141d5efe53e8daac1e274d; expires=Fri, 03-Aug-2012 19:24:41 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=8b0b466d5124aaf53b0e350b9a682f9c:13391bab609a82bacc8e9f90192445220ee87f45;
+        expires=Sun, 16-Feb-2014 02:05:35 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:42 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 02:05:35 GMT
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.sendip.json?api_key=pass&api_user=user&ip%5B0%5D=74.63.231.33&set=specify&task=append&user=test-4
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.sendip.json?api_key=pass&api_user=user&ip%5B0%5D=192.254.126.178&set=specify&task=append&user=test-6
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:44 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:37 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=b743574ed2739c31d5051c5c5bdcbd3d:499de797e948efd5a1d9eb2df31c4ef7e844a896; expires=Fri, 03-Aug-2012 19:24:44 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=163b7506e8b1145bcda46111613bd73c:2ab6b558ae85346f03c8379b1ca39b421ba7858e;
+        expires=Sun, 16-Feb-2014 02:05:37 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:45 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 02:05:37 GMT
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=opentrack&task=activate&user=test-4
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=opentrack&task=activate&user=test-6
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:47 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:39 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=6bec246ed9c6559c8e7cffb70208dda0:14d6fd85ad01a322157bcaa3e26d7db985db5b03; expires=Fri, 03-Aug-2012 19:24:47 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=c29e955354d32391c7e79b8cc4705141:b9ac8711aa54f7f8419ae95ed7c9e935b2752f6a;
+        expires=Sun, 16-Feb-2014 02:05:39 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:48 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 02:05:39 GMT
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=clicktrack&task=activate&user=test-4
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=clicktrack&task=activate&user=test-6
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:49 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:41 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=3b33c190ddad757fd2f6d571f1d41045:4ab2cf186e7fc3c6178ac1c2e8ad45cfefe9e2c5; expires=Fri, 03-Aug-2012 19:24:49 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=af380208ceadf66b245df9df09b62449:d09aa8767a003217b00fc5bb24a9250d5bed55c5;
+        expires=Sun, 16-Feb-2014 02:05:41 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:50 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 02:05:41 GMT
+- request:
     method: post
     uri: https://sendgrid.com/apiv2/customer.apps.json
-    body: 
+    body:
       encoding: US-ASCII
-      string: enable_text=1&user=test-4&name=clicktrack&task=setup&api_user=kyle%40agencieshq.com&api_key=pass
-    headers: 
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
-      code: 200
-      message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:53 GMT
-      Content-Type: 
-      - application/json
-      Connection: 
-      - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=24df842efbff85129c417d840ca410f5:3eee4715ae0db8c56af46cf0312a3eff0de9de17; expires=Fri, 03-Aug-2012 19:24:53 GMT; path=/; httponly
-      Vary: 
-      - Accept-Encoding
-      Content-Length: 
-      - "21"
-    body: 
-      encoding: US-ASCII
-      string: "{\"message\":\"success\"}"
-    http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:53 GMT
-- request: 
-    method: get
-    uri: https://sendgrid.com/apiv2/customer.auth.json?api_key=pass&api_user=user&password=somepass&user=test-3
-    body: 
-      encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: enable_text=1&user=test-6&name=clicktrack&task=setup&api_user=kyle%40agencieshq.com&api_key=pass
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Wed, 04 Jul 2012 19:24:55 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:43 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=89b35fa9d04e81db5896b2d2fcb9d7b9:9273c47d7e92bd7296e305b28f492d1934021890; expires=Fri, 03-Aug-2012 19:24:55 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=e37efb9994c49694500d7e314071f9fc:164061258d44cb2e641516b81cb797eb87c21ab3;
+        expires=Sun, 16-Feb-2014 02:05:43 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Wed, 04 Jul 2012 19:24:56 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 02:05:43 GMT
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.auth.json?api_key=pass&api_user=user&password=somepass&user=test-6
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 02:05:45 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '46'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=527331d9ae42b305caf5442ce21cd4b0:6118a62c2cbca811deb6cdd638e633358c551710;
+        expires=Sun, 16-Feb-2014 02:05:45 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
+    http_version: 
+  recorded_at: Fri, 17 Jan 2014 02:05:45 GMT
+recorded_with: VCR 2.8.0

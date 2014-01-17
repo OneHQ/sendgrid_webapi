@@ -1,96 +1,91 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.monitor.json?api_key=pass&api_user=user&email=test@test.com&frequency=10000&name=testmonitor&task=create
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.monitor.json?api_key=pass&api_user=user&email=test@email.com&frequency=10000&name=testmonitor&task=create
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:35:47 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:25:53 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=7a6ba0b411f1bd1bbfe67b3afeaf98b3:3342fa0c9f70d8d31b8af13ed1438e9e14f7a053; expires=Wed, 01-Aug-2012 14:35:22 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=5d3f08ad500e9c59149365b37c00199d:cabd8ed4711f788f86e6726ab217061f293aaaa2;
+        expires=Sun, 16-Feb-2014 01:25:52 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "46"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA6pWyk0tLk5MT1WyUiouTU4GcpRqAQAAAP//AwDGVSbjFQAA
-        AA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:35:47 GMT
-- request: 
+  recorded_at: Fri, 17 Jan 2014 01:25:53 GMT
+- request:
     method: get
     uri: https://sendgrid.com/apiv2/customer.monitor.json?api_key=pass&api_user=user&task=list
-    body: 
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:35:49 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:25:55 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '93'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=38f1874be32f7efd5c8ecf06063b4304:329efab2bedb271404cb91b854788a6166666503; expires=Wed, 01-Aug-2012 14:35:24 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=0470b3570b85d71a03e58ab634bd1cea:333b55cb9c58ce19629cd185ee713ab5489bc56d;
+        expires=Sun, 16-Feb-2014 01:25:54 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "93"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA4quVspLzE1VslIqSS0uyc3PyyzJL1LSUUrNTczMgYo6gAi9
-        5PxcoHhaUWphaWpeciVQztAACIBipcWpRcVKVtGxtbEAAAAA//8DANl1E6FP
-        AAAA
-
+    body:
+      encoding: UTF-8
+      string: '[{"name":"testmonitor","email":"test@email.com","frequency":"10000","users":[]}]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:35:49 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:25:55 GMT
+recorded_with: VCR 2.8.0

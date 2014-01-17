@@ -9,5 +9,10 @@ module SendGridWebApi::Modules
       block_delete_url = "blocks.delete.json"
       query_api(block_delete_url, options)
     end
+
+    def count options = {}
+      block_count_url = "blocks.count.json"
+      query_api(block_count_url, options)
+    end
   end  
 end

@@ -1,49 +1,47 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.ip.json?api_key=pass&api_user=user&list=all&user=chebyte3
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.ip.json?api_key=pass&api_user=user&list=all&user=sendgrid_testuser3
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:35:44 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:25:28 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '52'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=b25ba41e7be9dac5ef3b16bb58e1836b:788b487a6c47e9f6491aadbc46172eb736049022; expires=Wed, 01-Aug-2012 14:35:19 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=add2756339bf280c9349156f6807794f:bf32ff90c1df9476820d20c39ef075742e82ba8f;
+        expires=Sun, 16-Feb-2014 01:25:28 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "49"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA4quVsosULJSMjfRMzPWMzI21DM2VqqNBQAAAP//AwCbJBZL
-        FwAAAA==
-
+    body:
+      encoding: UTF-8
+      string: '[{"ip":"192.254.126.178"}]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:35:44 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:25:28 GMT
+recorded_with: VCR 2.8.0

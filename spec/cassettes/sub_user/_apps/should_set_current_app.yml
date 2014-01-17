@@ -1,90 +1,91 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: post
     uri: https://sendgrid.com/apiv2/customer.apps.json
-    body: 
+    body:
       encoding: US-ASCII
-      string: user=chebyte3&name=eventnotify&processed=1&dropped=1&deferred=1&delivered=1&bounce=1&click=1&open=1&unsubscribe=1&spamreport=1&url=http%3A%2F%2Fyourdomain.com%2Fevent.php&task=setup&api_user=kyle%40agencieshq.com&api_key=pass
-    headers: 
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
-      code: 200
-      message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:36:22 GMT
-      Content-Type: 
-      - application/json
-      Connection: 
-      - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=268d4324913e986399f00c869b35cc09:1a5948255d0f724e88ba498ced52dc8d6cfbd80f; expires=Wed, 01-Aug-2012 14:35:58 GMT; path=/; httponly
-      Vary: 
-      - Accept-Encoding
-      Content-Length: 
-      - "21"
-    body: 
-      encoding: US-ASCII
-      string: "{\"message\":\"success\"}"
-    http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:36:23 GMT
-- request: 
-    method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=eventnotify&task=getsettings&user=chebyte3
-    body: 
-      encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: user=sendgrid_testuser3&name=eventnotify&processed=1&dropped=1&deferred=1&delivered=1&bounce=1&click=1&open=1&unsubscribe=1&spamreport=1&url=http%3A%2F%2Fyourdomain.com%2Fevent.php&task=setup&api_user=kyle%40agencieshq.com&api_key=pass
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:36:24 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:27:48 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '46'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=eb77d06f236ad49d516a90b1328a55bd:ae3b097c5bfc127f3037c2db034e776a872d7619; expires=Wed, 01-Aug-2012 14:36:00 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=df8b5389cf476f9b4e09ffc9b8db8c5d:30700d2a3499557b6ed317a004b93fa65fa95cbb;
+        expires=Sun, 16-Feb-2014 01:27:48 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "142"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA0zKMQrDMAxA0btoLjFdfZYssaw2prYlJDtQQu7eDA7p9h/8
-        HYxaS/Vt4HcQZSQziuDhCQ+IyiK36EWqf8xpo9uBe0UawJzwM5qF6sherQdD
-        TeEaTZaiJKztWjSftbYmfnaz+3LXyGVJdUIus6ONaptkFTiOHwAAAP//AwCy
-        UmwgvQAAAA==
-
+    body:
+      encoding: UTF-8
+      string: '{"message":"success"}'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:36:24 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:27:48 GMT
+- request:
+    method: get
+    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=eventnotify&task=getsettings&user=sendgrid_testuser3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:27:51 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '159'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=2a834f0d4ef110386049a1cb8884cb77:9f1efb3a14a4a9d0ff69bc6bcd554773453b4f21;
+        expires=Sun, 16-Feb-2014 01:27:50 GMT; path=/; httponly
+      Vary:
+      - Accept-Encoding
+    body:
+      encoding: UTF-8
+      string: '{"settings":{"processed":"1","dropped":"1","deferred":"1","delivered":"1","bounce":"1","click":"1","open":"1","unsubscribe":"1","subscribe":"","spamreport":"1","url":"http:\/\/yourdomain.com\/event.php","batch":"","version":"3"}}'
+    http_version: 
+  recorded_at: Fri, 17 Jan 2014 01:27:51 GMT
+recorded_with: VCR 2.8.0

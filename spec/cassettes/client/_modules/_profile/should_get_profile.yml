@@ -1,52 +1,48 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/api/profile.get.json?api_key=pass&api_user=user
-    body: 
+    uri: https://api.sendgrid.com/api/profile.get.json?api_key=pass&api_user=user
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:43:20 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:52:33 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '214'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=0281062ca9aedaf3d14f8b0636917bbd:7fa7d12a67a2c1dcec919fbf185cce1a810f3201; expires=Wed, 01-Aug-2012 14:42:55 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=97f8357637a87956b89ecd1201a65193:c3e973aded10a008d3cfb27eb61695a57a47dae8;
+        expires=Sun, 16-Feb-2014 01:52:33 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "214"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA3yPQQrCMBBFr1KyrlaqLepK8QYWcWGlxDjSYNuEZKJU8e5O
-        2mJ3Bobhvz/5mZzezFkwDa+BrRnXehHPl2m62pRg1N1NhapZyKDmsvrjc4Hy
-        4QPQOCB9k8ZiMYTuwUJVgSFe8RHvnEVVd5hfrwasJZgkSbBt2iBDA4CjFZNH
-        Skhs/VXfQmaRo0/Kuh6yl9SkVjM6fla5Bo0fP2Qkdaka6F+YDJUQfsLFyi6l
-        RNTrPMqj44B+ZsGF6Nfrvvc5fwEAAP//AwCFoZM+NQEAAA==
-
+    body:
+      encoding: UTF-8
+      string: '[{"username":"user","email":"user","active":"true","first_name":"Reseller","last_name":"Customer","address":"555
+        Any Street","address2":"","city":"City","state":"State","zip":"90000","country":"US","phone":"555-555-5555","website":"http:\/\/Website","website_access":"true"}]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:43:20 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:52:33 GMT
+recorded_with: VCR 2.8.0

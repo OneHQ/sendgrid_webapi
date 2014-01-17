@@ -1,48 +1,47 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/api/user.bounces.json?api_key=pass&api_user=user&task=get&user=chebyte3
-    body: 
+    uri: https://sendgrid.com/api/user.bounces.json?api_key=pass&api_user=user&task=get&user=sendgrid_testuser3
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:35:04 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:22:47 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '28'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=062a2ad3cdf94e3d393f5fd3598e2319:1c91c4465a5ed5d2841160eaaa6b874228e8ba03; expires=Wed, 01-Aug-2012 14:34:39 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=4a6fb72667ecc836c99dc29b0d2aab38:ca122e4b58018139f063ad9d191ffe7e2f0309a3;
+        expires=Sun, 16-Feb-2014 01:22:46 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "28"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA4qOBQAAAP//AwApu0wNAgAAAA==
-
+    body:
+      encoding: UTF-8
+      string: '[]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:35:04 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:22:47 GMT
+recorded_with: VCR 2.8.0

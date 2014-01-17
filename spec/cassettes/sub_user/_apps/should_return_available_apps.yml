@@ -1,64 +1,72 @@
---- 
-http_interactions: 
-- request: 
+---
+http_interactions:
+- request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&task=getavailable&user=chebyte3
-    body: 
+    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&task=getavailable&user=sendgrid_testuser3
+    body:
       encoding: US-ASCII
-      string: ""
-    headers: 
-      Accept-Encoding: 
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept: 
-      - "*/*"
-      User-Agent: 
-      - Ruby
-  response: 
-    status: 
+      Accept:
+      - '*/*'
+  response:
+    status:
       code: 200
       message: OK
-    headers: 
-      Server: 
-      - nginx/0.7.65
-      Date: 
-      - Mon, 02 Jul 2012 14:36:15 GMT
-      Content-Type: 
+    headers:
+      Server:
+      - nginx/1.4.2
+      Date:
+      - Fri, 17 Jan 2014 01:27:36 GMT
+      Content-Type:
       - application/json
-      Connection: 
+      Content-Length:
+      - '861'
+      Connection:
       - keep-alive
-      X-Powered-By: 
-      - PHP/5.3.2-1ubuntu4.14
-      Cache-Control: 
-      - private
-      Set-Cookie: 
-      - sendgrid_frontend=4f71d816e5f60b0d28140f3d2ded57b0:3491cc1c885bb4ccd0d98b894220d773db5553c5; expires=Wed, 01-Aug-2012 14:35:50 GMT; path=/; httponly
-      Content-Encoding: 
-      - gzip
-      Vary: 
+      X-Powered-By:
+      - PHP/5.3.2-1ubuntu4.22
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - '0'
+      Set-Cookie:
+      - sendgrid_frontend=4b7dfa83a1993cca06825c1841d7e030:0b9051b43ae6630759e6d2f1773a7566ac4bb3ff;
+        expires=Sun, 16-Feb-2014 01:27:35 GMT; path=/; httponly
+      Vary:
       - Accept-Encoding
-      Content-Length: 
-      - "739"
-    body: 
-      encoding: ASCII-8BIT
-      string: !binary |
-        H4sIAAAAAAAAA5RVwXITMQz9FU0uXEK59xZSSjullGk7wwE4KGsl64nX3rG9
-        CQvTf0eyN6mTlC6ckn229Z6lJ/nb74nFhibnk5XHDUb0k+kk6mgE+vgMKQqV
-        123UzvLCrG3JqgC96zzsDkJ0QFjVcPV4+wmoQW3O+CRWUfM6qcn5Ek2gp+me
-        sjK6WkeP1bognQsIj4JquzqhvtuQ33odKQDx3x6MtmuhTnEGLAUGbbOKMCIj
-        dIs9w7Gah2Lt76JmipPR2SHQgpKokFTVBAsXo2vALdNXpJ8R0KoiTeEM4LKL
-        nafhG7bOvonAgRQZzVciJcEKBgVdID92M8dlOr7RHWOv3GSoLFpO30YHvTAE
-        usEViYBCcpHy4bvGCDVu+L7EDEJNakTf0rlIpeMud8CRKmPcNtlNaFEpQKi6
-        IFnNIQR2XVw5vtM/WS+02FQ1HdaaMZgL+IKEhAvHwnVcvIZC4KQE5vcgwaBi
-        83C2R3hXaNH0UVeh7DPnVpzmWbF0SJ7KlbuNadgPQezoUbpArHR/dw1bHWs4
-        jjSiJlLTGl4qtHyQ5MHj88Jrlcg10L8oa9tXoLT26wqU4112TX2Zj4sEwk1G
-        XxSQgosE7pGgV2y1nIB8VE6OEC+qqmB8P5+fMnV8N+QsojE98A5pCvae59Kn
-        sudZQ2+TlDBee95vo3VRL/sy4YLCZ4GZKnGfeE/mkuMes8WuvQYbwxRCx4MX
-        A4g7K2IgjUD+FXtIL44OQSJldIiFsnvikWThC3JeH56XD7VdsohyY7YEO3Sa
-        C5KMsQueJA8jrYfGWR2dZ8OMjgm/Ra+kzQ5mRULhIcMv2kT4eFS4tpfxm/rU
-        U+t8DIN3htB5vuLwYOyqPCJr2LWt+TU6St1ssMnXYu3kyUg7vr+D3APDBA21
-        64wCK+bK4zRLCl3byoHRmarWuszSxc317X83EZ85gzla9lt6hHRAfgeOmaPv
-        6OnHHwAAAP//AwCQwcoZQggAAA==
-
+    body:
+      encoding: UTF-8
+      string: '[{"name":"gravatar","title":"Gravatar","description":"Appends your
+        gravatar to each HTML email.","activated":false},{"name":"clicktrack","title":"Click
+        Tracking","description":"Overwrites every link to track every click in emails.","activated":false},{"name":"subscriptiontrack","title":"Subscription
+        Tracking","description":"Adds unsubscribe links to the bottom of the text
+        and HTML emails.  Future emails won''t be delivered to unsubscribed users.","activated":false},{"name":"opentrack","title":"Open
+        Tracking","description":"Appends an invisible image to HTML emails to track
+        emails that have been opened.","activated":false},{"name":"footer","title":"Footer","description":"Allows
+        you to add a custom footer to outgoing email.","activated":false},{"name":"spamcheck","title":"Spam
+        Checker","description":"Check outbound messages for spam content.","activated":false},{"name":"ganalytics","title":"Google
+        Analytics","description":"Track your conversion rates and ROI with Google
+        Analytics.","activated":false},{"name":"template","title":"Email Template","description":"Allows
+        you to customize your outgoing HTML emails.","activated":false},{"name":"domainkeys","title":"Domain
+        Keys","description":"Allows email to be signed with DomainKeys.","activated":false},{"name":"bcc","title":"BCC","description":"Automatically
+        BCC an address for every e-mail sent.","activated":false},{"name":"eventnotify","title":"Event
+        Notification","description":"Controls notifications for events, such as bounces,
+        clicks, and opens.","activated":false},{"name":"seedlist","title":"Return
+        Path Seedlist","description":"For Return Path customers, with your seedlist
+        for delivery monitoring.","activated":false},{"name":"forwardspam","title":"Forward
+        Spam","description":"Allows for a copy of spam reports to be forwarded to
+        an email address.","activated":false},{"name":"addresswhitelist","title":"Address
+        Whitelist","description":"Address \/ domains that should never have email
+        suppressed.","activated":false},{"name":"dkim","title":"DKIM","description":"Allows
+        email to be signed with DKIM. Cannot be disabled.","activated":true},{"name":"newrelic","title":"SendGrid
+        for New Relic","description":"Integrate SendGrid with your New Relic account
+        to access your email statistics via the <a target=\"blank\" href=\"https:\/\/newrelic.com\/sendgrid\">New
+        Relic<\/a> Dashboard.","activated":false}]'
     http_version: 
-  recorded_at: Mon, 02 Jul 2012 14:36:15 GMT
-recorded_with: VCR 2.1.1
+  recorded_at: Fri, 17 Jan 2014 01:27:36 GMT
+recorded_with: VCR 2.8.0
