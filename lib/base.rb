@@ -1,6 +1,6 @@
-module SendGridWebApi
-  autoload :Faraday, 'middlewares/sendgrid_response'
-  
+require 'faraday_middleware'
+
+module SendGridWebApi  
   class Base
     attr_accessor :api_user, :api_key
 
@@ -33,7 +33,10 @@ module SendGridWebApi
 
     def session
       @connection ||= ::Faraday.new base_url do |conn|
-        conn.use Faraday::Response::SendGridWebApi
+        # Forces the connection request and response to be JSON even though
+        # Sendgrids API headers do not specify the content type is JSON
+        conn.request :json
+        conn.response :json #, :content_type => /\bjson$/
         conn.adapter Faraday.default_adapter
       end
     end
