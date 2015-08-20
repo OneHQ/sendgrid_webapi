@@ -1,6 +1,6 @@
 require 'faraday_middleware'
 
-module SendGridWebApi  
+module SendGridWebApi
   class Base
     attr_accessor :api_user, :api_key
 
@@ -8,7 +8,7 @@ module SendGridWebApi
       @api_user = api_user
       @api_key  = api_key
     end
-    
+
     def make_request_url url, options
       "#{url}?#{builder_options(options)}"
     end
@@ -23,19 +23,19 @@ module SendGridWebApi
     end
 
     def query_post_api url, options
-      builder_options(options)
       session.post(url, builder_options(options)).body
     end
-    
+
     def to_query(options)
       Faraday::Utils.build_nested_query(options)
     end
 
     def session
       @connection ||= ::Faraday.new base_url do |conn|
-        # Forces the connection request and response to be JSON even though
+        # Forces the response to be JSON even though
         # Sendgrids API headers do not specify the content type is JSON
-        conn.request :json
+        # Removed conn.request :json - This confused SendGrid on POST requests
+        # and is not strictly necessary.
         conn.response :json #, :content_type => /\bjson$/
         conn.adapter Faraday.default_adapter
       end
