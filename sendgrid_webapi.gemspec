@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["kylejginavan", "chebyte"]
   s.email       = ["kylejginavan@gmail.com", "maurotorres@gmail.com"]
-  s.homepage    = "https://github.com/kylejginavan/sendgrid_smtpapi"
+  s.homepage    = "https://github.com/kylejginavan/sendgrid_webapi"
   s.summary     = %q{SendGrid WEB API gem fo Rails}
   s.description = %q{Gem for access to SendGrid WEB API from rails}
 
