@@ -105,12 +105,11 @@ jobs:
           name: Push gem
           command: |
             if [[ "${CIRCLE_PROJECT_USERNAME}" == "OneHQ" && "${CIRCLE_BRANCH}" == "master" && -n "${GEMFURY_USERNAME}" && -n "${GEMFURY_PASSWORD}" ]]; then
-              echo -e "machine api.fury.io\n  login ${GEMFURY_USERNAME}\n  password ${GEMFURY_PASSWORD}" >> ~/.netrc
-              chmod 600 ~/.netrc
-              version=$(ruby -e 'load "lib/sendgrid_webapi/version.rb"; puts SendGridWebApi::VERSION')
-              grep -q "${version}" <(fury versions sendgrid_webapi) || EXIT_CODE=$? && true
+              bash .circleci/setup-rubygems.sh
+              version=$(ruby -e 'load "lib/version.rb"; puts SendGridWebApi::VERSION')
+              grep -q "${version}" <(gem search sendgrid_api) || EXIT_CODE=$? && true
               if [[ $EXIT_CODE == 1 ]]; then
-                fury push sendgrid_webapi-${version}.gem
+                gem push sendgrid_webapi-${version}.gem
                 git tag ${version}
                 git push --tags
 
