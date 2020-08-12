@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "faraday", "~> 0.12"
   s.add_dependency "faraday_middleware", "~> 0.12"
-  s.add_dependency "json", "~> 1.8.0"
+  s.add_dependency "json", ">= 2.3.0"
 
   s.add_development_dependency "rspec", "~> 2.10.0"
   s.add_development_dependency "webmock", "~> 1.8.7"
