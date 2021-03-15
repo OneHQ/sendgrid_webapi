@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.monitor.json?api_key=pass&api_user=user&name=testmonitor&task=delete
+    uri: https://sendgrid.com/apiv2/customer.monitor.json?name=testmonitor&task=delete
     body:
       encoding: US-ASCII
       string: ''
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 01:26:12 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.monitor.json?api_key=pass&api_user=user&task=list
+    uri: https://sendgrid.com/apiv2/customer.monitor.json?task=list
     body:
       encoding: US-ASCII
       string: ''

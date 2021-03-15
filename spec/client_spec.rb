@@ -11,7 +11,7 @@ describe "client" do
   
     it "should return request url" do
       client.make_request_url("blocks.get.json", {:data => 1}).
-        should eql "blocks.get.json?api_key=pass&api_user=user&data=1"
+        should eql "blocks.get.json?data=1"
     end
     
     it "should convert hash to url params" do

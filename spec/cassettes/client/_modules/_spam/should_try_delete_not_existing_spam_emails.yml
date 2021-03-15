@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/spamreports.delete.json?api_key=pass&api_user=user&email=test@example.com
+    uri: https://api.sendgrid.com/api/spamreports.delete.json?email=test@example.com
     body:
       encoding: US-ASCII
       string: ''

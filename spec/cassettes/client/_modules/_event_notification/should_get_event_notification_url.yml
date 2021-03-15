@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/eventposturl.get.json?api_key=pass&api_user=user
+    uri: https://api.sendgrid.com/api/eventposturl.get.json
     body:
       encoding: US-ASCII
       string: ''

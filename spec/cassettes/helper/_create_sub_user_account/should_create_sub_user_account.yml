@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.add.json?address=555%20anystreet&api_key=pass&api_user=user&city=any%20city&confirm_password=somepass&country=US&email=email@email.com&first_name=home&last_name=simpson&password=somepass&phone=555-555&state=CA&username=test-6&website=someurl.com&zip=91234
+    uri: https://sendgrid.com/apiv2/customer.add.json?address=555%20anystreet&city=any%20city&confirm_password=somepass&country=US&email=email@email.com&first_name=home&last_name=simpson&password=somepass&phone=555-555&state=CA&username=test-6&website=someurl.com&zip=91234
     body:
       encoding: US-ASCII
       string: ''
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 02:05:33 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.enable.json?api_key=pass&api_user=user&user=test-6
+    uri: https://sendgrid.com/apiv2/customer.enable.json?user=test-6
     body:
       encoding: US-ASCII
       string: ''
@@ -90,7 +90,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 02:05:35 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.sendip.json?api_key=pass&api_user=user&ip%5B0%5D=192.254.126.178&set=specify&task=append&user=test-6
+    uri: https://sendgrid.com/apiv2/customer.sendip.json?ip%5B0%5D=192.254.126.178&set=specify&task=append&user=test-6
     body:
       encoding: US-ASCII
       string: ''
@@ -134,7 +134,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 02:05:37 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=opentrack&task=activate&user=test-6
+    uri: https://sendgrid.com/apiv2/customer.apps.json?name=opentrack&task=activate&user=test-6
     body:
       encoding: US-ASCII
       string: ''
@@ -178,7 +178,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 02:05:39 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=clicktrack&task=activate&user=test-6
+    uri: https://sendgrid.com/apiv2/customer.apps.json?name=clicktrack&task=activate&user=test-6
     body:
       encoding: US-ASCII
       string: ''
@@ -266,7 +266,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 02:05:43 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.auth.json?api_key=pass&api_user=user&password=somepass&user=test-6
+    uri: https://sendgrid.com/apiv2/customer.auth.json?password=somepass&user=test-6
     body:
       encoding: US-ASCII
       string: ''
