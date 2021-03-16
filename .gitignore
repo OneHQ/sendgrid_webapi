@@ -30,4 +30,4 @@ sphinx/**/*
 tmp
 tmp/**/*
 Gemfile.lock
-vendor/ruby
+vendor/bundle
