@@ -90,7 +90,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 02:05:35 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.sendip.json?ip%5B0%5D=192.254.126.178&set=specify&task=append&user=test-6
+    uri: https://sendgrid.com/apiv2/customer.sendip.json?ip%5B%5D=192.254.126.178&set=specify&task=append&user=test-6
     body:
       encoding: US-ASCII
       string: ''

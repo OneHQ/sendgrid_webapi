@@ -19,12 +19,12 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency "faraday", "~> 0.12"
-  s.add_dependency "faraday_middleware", "~> 0.12"
-  s.add_dependency "json", "~> 1.8.0"
+  s.add_dependency "faraday", "~> 1.0"
+  s.add_dependency "faraday_middleware", "~> 1.0"
+  s.add_dependency "json", "~> 2.5", ">= 2.5.1"
 
-  s.add_development_dependency "rspec", "~> 2.10.0"
-  s.add_development_dependency "webmock", "~> 1.8.7"
-  s.add_development_dependency "vcr", "~> 2.8.0"
+  s.add_development_dependency "rspec", "~> 3.4"
+  s.add_development_dependency "webmock", "~> 3.12", ">= 3.12.1"
+  s.add_development_dependency "vcr", "~> 6.0"
   s.add_development_dependency "rspec_junit_formatter",   "~> 0.3", ">= 0.3.0"
 end

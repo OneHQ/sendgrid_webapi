@@ -17,7 +17,7 @@ describe "helper" do
         run_sendgrid_query("user", "pass") do
           @client.sub_user.apps.activate(:user => "sendgrid_testuser3", :name => "badappname")
         end
-      end.should raise_error
+      end.should raise_error(RuntimeError)
     end
   end
   
