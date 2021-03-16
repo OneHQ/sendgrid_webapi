@@ -3,18 +3,18 @@ require 'spec_helper'
 describe "helper" do
   include SendGridWebApi::Helper
 
-  let(:client) { SendGridWebApi::Client.new("user", "pass") }
+  let(:client) { SendGridWebApi::Client.new("pass") }
   
   describe "#run_sendgrid_query" do    
     it "should run sendgrid request", :vcr do
-      run_sendgrid_query("user", "pass") do
+      run_sendgrid_query("pass") do
         @client.sub_user.apps.activate(:user => "sendgrid_testuser3", :name => "clicktrack")
       end
     end
 
     it "should raise with unsucessfull request", :vcr do
       lambda do
-        run_sendgrid_query("user", "pass") do
+        run_sendgrid_query("pass") do
           @client.sub_user.apps.activate(:user => "sendgrid_testuser3", :name => "badappname")
         end
       end.should raise_error
@@ -39,7 +39,7 @@ describe "helper" do
     end
     
     it "should create sub_user_account" do
-      create_sub_user_account("user", "pass", @users)
+      create_sub_user_account("pass", @users)
       client.sub_user.auth.login(:user => "test-6", :password => "somepass").
         should == {"message" => "success"}
     end

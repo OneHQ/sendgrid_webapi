@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "sub_user" do
-  let(:client) { SendGridWebApi::Client.new("user", "pass") }
+  let(:client) { SendGridWebApi::Client.new("pass") }
   
   describe "#management", :vcr do
     it  "should add new subuser" do

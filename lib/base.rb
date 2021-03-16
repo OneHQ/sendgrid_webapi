@@ -2,10 +2,9 @@ require 'faraday_middleware'
 
 module SendGridWebApi
   class Base
-    attr_accessor :api_user, :api_key
+    attr_accessor :api_key
 
-    def initialize api_user, api_key
-      @api_user = api_user
+    def initialize api_key
       @api_key  = api_key
     end
 

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe "client" do
-  let(:client) { SendGridWebApi::Client.new("user", "pass") }
+  let(:client) { SendGridWebApi::Client.new("pass") }
   
   
   describe "#base", :vcr do
