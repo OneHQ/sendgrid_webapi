@@ -2,10 +2,9 @@ require 'faraday_middleware'
 
 module SendGridWebApi
   class Base
-    attr_accessor :api_user, :api_key
+    attr_accessor :api_key
 
-    def initialize api_user, api_key
-      @api_user = api_user
+    def initialize api_key
       @api_key  = api_key
     end
 
@@ -14,7 +13,6 @@ module SendGridWebApi
     end
 
     def builder_options options
-      options.merge!(:api_user => @api_user, :api_key => @api_key)
       to_query(options)
     end
 
@@ -32,7 +30,10 @@ module SendGridWebApi
     end
 
     def session
-      @connection ||= ::Faraday.new base_url do |conn|
+      @connection ||= ::Faraday.new(
+        url: base_url,
+        headers: {"Authorization" => "Bearer #{@api_key}"}
+      ) do |conn|
         # Forces the connection request and response to be JSON even though
         # Sendgrids API headers do not specify the content type is JSON
         conn.request :url_encoded

@@ -19,7 +19,7 @@ for sendgrid v2 support
 
 === Creating client object:
 
-    client = SendGridWebApi::Client.new("user_name", "password")
+    client = SendGridWebApi::Client.new("apikey")
 
 == Modules
 
@@ -131,7 +131,7 @@ This module allows you to send email.
 
 === Creating client object:
 
-    client = SendGridWebApi::Client.new("user_name", "password")
+    client = SendGridWebApi::Client.new("apikey")
 
     client.sub_user
 

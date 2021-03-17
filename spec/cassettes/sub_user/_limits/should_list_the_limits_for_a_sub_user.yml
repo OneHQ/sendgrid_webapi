@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&task=retrieve&user=sendgrid_testuser3
+    uri: https://sendgrid.com/apiv2/customer.limit.json?task=retrieve&user=sendgrid_testuser3
     body:
       encoding: US-ASCII
       string: ''

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.parse.json?api_key=pass&api_user=user&hostname=www.example.com&spam_check=1&task=set&url=www.mydomain.com/parse.php&user=sendgrid_testuser3
+    uri: https://sendgrid.com/apiv2/customer.parse.json?hostname=www.example.com&spam_check=1&task=set&url=www.mydomain.com/parse.php&user=sendgrid_testuser3
     body:
       encoding: US-ASCII
       string: ''

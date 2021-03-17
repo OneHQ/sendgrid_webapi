@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/profile.set.json?api_key=pass&api_user=user&first_name=test
+    uri: https://api.sendgrid.com/api/profile.set.json?first_name=test
     body:
       encoding: US-ASCII
       string: ''
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 01:52:35 GMT
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/profile.get.json?api_key=pass&api_user=user
+    uri: https://api.sendgrid.com/api/profile.get.json
     body:
       encoding: US-ASCII
       string: ''
@@ -91,7 +91,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 01:52:36 GMT
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/profile.set.json?api_key=pass&api_user=user&first_name=Reseller
+    uri: https://api.sendgrid.com/api/profile.set.json?first_name=Reseller
     body:
       encoding: US-ASCII
       string: ''

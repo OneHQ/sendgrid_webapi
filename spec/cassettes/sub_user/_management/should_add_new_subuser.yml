@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.add.json?address=555%20anystreet&api_key=pass&api_user=user&city=any%20city&confirm_password=somepass&country=US&email=sendgrid_testuser3@example.com&first_name=homero&last_name=simpson&password=somepass&phone=555-555&state=CA&username=sendgrid_testuser3&website=example.com&zip=91234
+    uri: https://sendgrid.com/apiv2/customer.add.json?address=555%20anystreet&city=any%20city&confirm_password=somepass&country=US&email=sendgrid_testuser3@example.com&first_name=homero&last_name=simpson&password=somepass&phone=555-555&state=CA&username=sendgrid_testuser3&website=example.com&zip=91234
     body:
       encoding: US-ASCII
       string: ''

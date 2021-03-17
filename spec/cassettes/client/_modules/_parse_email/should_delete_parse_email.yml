@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/parse.delete.json?api_key=pass&api_user=user&hostname=www.example.com
+    uri: https://api.sendgrid.com/api/parse.delete.json?hostname=www.example.com
     body:
       encoding: US-ASCII
       string: ''
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 01:51:54 GMT
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/parse.get.json?api_key=pass&api_user=user
+    uri: https://api.sendgrid.com/api/parse.get.json
     body:
       encoding: US-ASCII
       string: ''
