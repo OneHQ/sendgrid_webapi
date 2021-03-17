@@ -25,6 +25,24 @@ module SendGridWebApi
       session.post(url, builder_options(options)).body
     end
 
+    def query_post_json_api url, options
+      (session.post(url) do |req|
+        req.headers[:content_type] = 'application/json'
+        req.body = options.to_json
+      end).body
+    end
+
+    def query_patch_api url, options
+      (session.patch(url) do |req|
+        req.headers[:content_type] = 'application/json'
+        req.body = options.to_json
+      end).body
+    end
+
+    def query_delete_api url, options
+      session.delete(make_request_url(url, options)).body
+    end
+
     def to_query(options)
       Faraday::Utils.build_nested_query(options)
     end
