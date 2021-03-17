@@ -47,4 +47,8 @@ module SendGridWebApi::Modules
   def sub_user
     @sub_user ||= SendGridWebApi::SubUser.new(@api_key)
   end
+
+  def apikey
+    @apikey ||= SendGridWebApi::ApiKey.new(@api_key)
+  end
 end
