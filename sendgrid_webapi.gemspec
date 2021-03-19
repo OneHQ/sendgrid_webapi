@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{SendGrid WEB API gem fo Rails}
   s.description = %q{Gem for access to SendGrid WEB API from rails}
 
-  s.rubyforge_project = "sendgrid_webapi"
+  # s.rubyforge_project = "sendgrid_webapi"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
