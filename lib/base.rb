@@ -2,10 +2,9 @@ require 'faraday_middleware'
 
 module SendGridWebApi
   class Base
-    attr_accessor :api_user, :api_key
+    attr_accessor :api_key
 
-    def initialize api_user, api_key
-      @api_user = api_user
+    def initialize api_key
       @api_key  = api_key
     end
 
@@ -14,7 +13,6 @@ module SendGridWebApi
     end
 
     def builder_options options
-      options.merge!(:api_user => @api_user, :api_key => @api_key)
       to_query(options)
     end
 
@@ -27,12 +25,33 @@ module SendGridWebApi
       session.post(url, builder_options(options)).body
     end
 
+    def query_post_json_api url, options
+      (session.post(url) do |req|
+        req.headers[:content_type] = 'application/json'
+        req.body = options.to_json
+      end).body
+    end
+
+    def query_patch_api url, options
+      (session.patch(url) do |req|
+        req.headers[:content_type] = 'application/json'
+        req.body = options.to_json
+      end).body
+    end
+
+    def query_delete_api url, options
+      session.delete(make_request_url(url, options)).body
+    end
+
     def to_query(options)
       Faraday::Utils.build_nested_query(options)
     end
 
     def session
-      @connection ||= ::Faraday.new base_url do |conn|
+      @connection ||= ::Faraday.new(
+        url: base_url,
+        headers: {"Authorization" => "Bearer #{@api_key}"}
+      ) do |conn|
         # Forces the connection request and response to be JSON even though
         # Sendgrids API headers do not specify the content type is JSON
         conn.request :url_encoded

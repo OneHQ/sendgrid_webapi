@@ -19,7 +19,7 @@ for sendgrid v2 support
 
 === Creating client object:
 
-    client = SendGridWebApi::Client.new("user_name", "password")
+    client = SendGridWebApi::Client.new("apikey")
 
 == Modules
 
@@ -131,7 +131,7 @@ This module allows you to send email.
 
 === Creating client object:
 
-    client = SendGridWebApi::Client.new("user_name", "password")
+    client = SendGridWebApi::Client.new("apikey")
 
     client.sub_user
 
@@ -339,6 +339,21 @@ This module allows you to setup subusers app settings.
 
 * options are available here: http://sendgrid.com/docs/API_Reference/Customer_Subuser_API/apps.html
 
+
+=== Apikey
+This module allows you to manage apikeys
+
+    client.apikey.management.get
+
+    client.apikey.management.get({ apikey_id: "APIKEY_ID" })
+
+    client.apikey.management.create({ "name" => "APIKEY NAME", "scopes" => ["mail.send"] })
+
+    client.apikey.management.update("APIKEY_ID", { "name" => "NEW APIKEY NAME"})
+
+    client.apikey.management.delete "APIKEY_ID"
+
+* options are available here: https://sendgrid.com/docs/api-reference/
 
 == Helper
 

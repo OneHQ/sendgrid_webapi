@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.apps.json?api_key=pass&api_user=user&name=opentrack&task=deactivate&user=sendgrid_testuser3
+    uri: https://sendgrid.com/apiv2/customer.apps.json?name=opentrack&task=deactivate&user=sendgrid_testuser3
     body:
       encoding: US-ASCII
       string: ''

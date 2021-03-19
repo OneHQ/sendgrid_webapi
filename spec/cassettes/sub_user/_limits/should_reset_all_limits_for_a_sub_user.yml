@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&credits=400&period=daily&task=recurring&user=sendgrid_testuser3
+    uri: https://sendgrid.com/apiv2/customer.limit.json?credits=400&period=daily&task=recurring&user=sendgrid_testuser3
     body:
       encoding: US-ASCII
       string: ''
@@ -46,7 +46,7 @@ http_interactions:
   recorded_at: Fri, 17 Jan 2014 01:24:49 GMT
 - request:
     method: get
-    uri: https://sendgrid.com/apiv2/customer.limit.json?api_key=pass&api_user=user&task=retrieve&user=sendgrid_testuser3
+    uri: https://sendgrid.com/apiv2/customer.limit.json?task=retrieve&user=sendgrid_testuser3
     body:
       encoding: US-ASCII
       string: ''
