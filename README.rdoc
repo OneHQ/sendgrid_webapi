@@ -345,13 +345,23 @@ This module allows you to manage apikeys
 
     client.apikey.management.get
 
+    client.apikey.management.get({ on_behalf_of: "SUB_USERNAME" })
+
     client.apikey.management.get({ apikey_id: "APIKEY_ID" })
+
+    client.apikey.management.get({ on_behalf_of: "SUB_USERNAME" })
 
     client.apikey.management.create({ "name" => "APIKEY NAME", "scopes" => ["mail.send"] })
 
+    client.apikey.management.create({ on_behalf_of: "SUB_USERNAME", "name" => "APIKEY NAME", "scopes" => ["mail.send"] })
+
     client.apikey.management.update("APIKEY_ID", { "name" => "NEW APIKEY NAME"})
 
-    client.apikey.management.delete "APIKEY_ID"
+    client.apikey.management.update("APIKEY_ID", { on_behalf_of: "SUB_USERNAME", "name" => "NEW APIKEY NAME"})
+
+    client.apikey.management.delete("APIKEY_ID")
+
+    client.apikey.management.delete("APIKEY_ID", { on_behalf_of: "SUB_USERNAME" })
 
 * options are available here: https://sendgrid.com/docs/api-reference/
 
