@@ -17,30 +17,42 @@ module SendGridWebApi
     end
 
     def query_api url, options
-      session.get(make_request_url(url, options)).body
+      headers = options.delete(:headers)
+      (session.get(make_request_url(url, options)) do |req|
+        req.headers.merge!(headers) unless headers.nil?
+      end).body
     end
 
     def query_post_api url, options
-      builder_options(options)
-      session.post(url, builder_options(options)).body
+      headers = options.delete(:headers)
+      (session.post(url, builder_options(options)) do |req|
+        req.headers.merge!(headers) unless headers.nil?
+      end).body
     end
 
     def query_post_json_api url, options
+      headers = options.delete(:headers)
       (session.post(url) do |req|
         req.headers[:content_type] = 'application/json'
+        req.headers.merge!(headers) unless headers.nil?
         req.body = options.to_json
       end).body
     end
 
     def query_patch_api url, options
+      headers = options.delete(:headers)
       (session.patch(url) do |req|
         req.headers[:content_type] = 'application/json'
+        req.headers.merge!(headers) unless headers.nil?
         req.body = options.to_json
       end).body
     end
 
     def query_delete_api url, options
-      session.delete(make_request_url(url, options)).body
+      headers = options.delete(:headers)
+      (session.delete(make_request_url(url, options)) do |req|
+        req.headers.merge!(headers) unless headers.nil?
+      end).body
     end
 
     def to_query(options)
