@@ -9,7 +9,6 @@
 .sass-cache
 /.ey_local_data
 /.ruby-gemset
-/.ruby-version
 /.vagrant
 bin/*
 config/*.sphinx.conf
