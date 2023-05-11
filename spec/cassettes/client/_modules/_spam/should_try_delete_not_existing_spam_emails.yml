@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.sendgrid.com/api/spamreports.delete.json?email=test@example.com
+    method: delete
+    uri: https://api.sendgrid.com/v3/suppression/spam_reports/test@example.com
     body:
       encoding: US-ASCII
       string: ''

@@ -26,10 +26,10 @@ describe "client" do
         client.blocks.get.should eql []
       end
       it "should try delete not existing block email" do
-        client.blocks.delete(:email => "test@example.com").should == {"message"=>"Email does not exist"}
+        client.blocks.delete({email: "test@example.com"}).should == {"message"=>"Email does not exist"}
       end
       it "should get totals blocks" do
-        client.blocks.count.should eql({"count"=>0})
+        client.blocks.count.should eql({:count=>0})
       end
     end
     
@@ -37,8 +37,13 @@ describe "client" do
       it "should get bounce emails" do
         client.bounces.get.should eql []
       end
+
+      it "should get bounce emails using params" do
+        client.bounces.get({limit: 2, offset: 1}).count.should eql 2
+      end
+
       it "should try delete not existing bounce email" do
-        client.bounces.delete(:email => "test@example.com").should == {"message"=>"Email does not exist"}
+        client.bounces.delete({email: "test@example.com"}).should == {"message"=>"Email does not exist"}
       end
     end
     
@@ -46,6 +51,11 @@ describe "client" do
       it "should get invalid emails" do
         client.invalid_emails.get.should eql []
       end
+
+      it "should get invalid emails using params" do
+        client.invalid_emails.get({limit: 3, offset: 2}).count.should eql 3
+      end
+
       it "should try delete not existing invalid emails" do
         client.invalid_emails.delete(:email => "test@example.com").should == {"message"=>"Email does not exist"}
       end
@@ -56,13 +66,13 @@ describe "client" do
         client.spam.get.should eql []
       end
       it "should try delete not existing spam emails" do
-        client.spam.delete(:email => "test@example.com").should == {"message"=>"Email does not exist"}
+        client.spam.delete({:email => "test@example.com"}).should == {"message"=>"Email does not exist"}
       end
     end
     
     describe "#unsubscribe", :vcr do
       it "should add unsubscribe emails" do
-        client.unsubscribes.add(:email => "test@example.com").
+        client.unsubscribes.add({ recipient_emails: ["test@example.com"] }).
           should == {"message"=>"success"}
       end
       it "should get unsubscribe emails" do
@@ -74,11 +84,11 @@ describe "client" do
           should == {"message"=>"success"}
       end
       it "should try delete not existing unsubscribe emails" do
-        client.unsubscribes.delete(:email => "test@example.com").
+        client.unsubscribes.delete({email: "test@example.com"}).
           should == {"message"=>"Email does not exist"}
       end
     end
-  
+
     describe "#parse_email", :vcr do      
       it "should set parse email" do
         client.parse_email.set(:hostname => "www.example.com", :url => "www.mydomain.com/parse.php", :spam_check => "1").

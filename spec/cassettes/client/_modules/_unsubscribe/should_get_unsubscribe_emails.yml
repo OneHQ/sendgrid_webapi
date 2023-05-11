@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/unsubscribes.get.json
+    uri: https://api.sendgrid.com/v3/suppression/unsubscribes
     body:
       encoding: US-ASCII
       string: ''
