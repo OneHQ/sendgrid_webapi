@@ -6,138 +6,144 @@ describe "client" do
   
   describe "#base", :vcr do
     it "should return api url" do
-      client.base_url.should eql "https://api.sendgrid.com/api/"
+      expect(client.base_url).to eql "https://api.sendgrid.com/api/"
     end
-  
+
     it "should return request url" do
-      client.make_request_url("blocks.get.json", {:data => 1}).
-        should eql "blocks.get.json?data=1"
+      expect(client.make_request_url("blocks.get.json", {:data => 1})).
+        to eql "blocks.get.json?data=1"
     end
-    
+
     it "should convert hash to url params" do
-      client.to_query({:value_one => "foo_one", :value_two => "foo_two"}).
-        should eql "value_one=foo_one&value_two=foo_two"
+      expect(client.to_query({:value_one => "foo_one", :value_two => "foo_two"})).
+        to eql "value_one=foo_one&value_two=foo_two"
     end    
   end
   
   describe "#modules", :vcr do
     describe "#block" do
       it "should get block emails" do
-        client.blocks.get.should eql []
+        expect(client.blocks.get).to eql []
       end
+
       it "should try delete not existing block email" do
-        client.blocks.delete({email: "test@example.com"}).should == {"message"=>"Email does not exist"}
+        expect(client.blocks.delete({email: "test@example.com"}) ).to eql ({"message"=>"Email does not exist"})
       end
+
       it "should get totals blocks" do
-        client.blocks.count.should eql({:count=>0})
+        expect(client.blocks.count).to eql({:count=>0})
       end
     end
     
     describe "#bounce", :vcr do
       it "should get bounce emails" do
-        client.bounces.get.should eql []
+        expect(client.bounces.get).to eql []
       end
 
       it "should get bounce emails using params" do
-        client.bounces.get({limit: 2, offset: 1}).count.should eql 2
+        expect(client.bounces.get({limit: 2, offset: 1}).count).to eql 2
       end
 
       it "should try delete not existing bounce email" do
-        client.bounces.delete({email: "test@example.com"}).should == {"message"=>"Email does not exist"}
+        expect(client.bounces.delete({email: "test@example.com"})).to eql ({"message"=>"Email does not exist"})
       end
     end
     
     describe "#invalid_email", :vcr do
       it "should get invalid emails" do
-        client.invalid_emails.get.should eql []
+        expect(client.invalid_emails.get).to eql []
       end
 
       it "should get invalid emails using params" do
-        client.invalid_emails.get({limit: 3, offset: 2}).count.should eql 3
+        expect(client.invalid_emails.get({limit: 3, offset: 2}).count).to eql 3
       end
 
       it "should try delete not existing invalid emails" do
-        client.invalid_emails.delete(:email => "test@example.com").should == {"message"=>"Email does not exist"}
+        expect(client.invalid_emails.delete(:email => "test@example.com")).to eql ({"message"=>"Email does not exist"})
       end
     end
     
     describe "#spam" do
       it "should get spam emails", :vcr do
-        client.spam.get.should eql []
+        expect(client.spam.get).to eql []
       end
+
       it "should try delete not existing spam emails" do
-        client.spam.delete({:email => "test@example.com"}).should == {"message"=>"Email does not exist"}
+        expect(client.spam.delete({:email => "test@example.com"})).to eql ({"message"=>"Email does not exist"})
       end
     end
     
     describe "#unsubscribe", :vcr do
       it "should add unsubscribe emails" do
-        client.unsubscribes.add({ recipient_emails: ["test@example.com"] }).
-          should == {"message"=>"success"}
+        expect(client.unsubscribes.add({ recipient_emails: ["test@example.com"] })).
+          to eql ({"message"=>"success"})
       end
+
       it "should get unsubscribe emails" do
-        client.unsubscribes.get.
-          should eql [{"email"=>"test@example.com"}]
+        expect(client.unsubscribes.get).
+          to eql [{"email"=>"test@example.com"}]
       end
+
       it "should delete unsubscribe email" do
-        client.unsubscribes.delete(:email => "test@example.com").
-          should == {"message"=>"success"}
+        expect(client.unsubscribes.delete(:email => "test@example.com")).
+          to eql ({"message"=>"success"})
       end
+
       it "should try delete not existing unsubscribe emails" do
-        client.unsubscribes.delete({email: "test@example.com"}).
-          should == {"message"=>"Email does not exist"}
+        expect(client.unsubscribes.delete({email: "test@example.com"})).
+          to eql ({"message"=>"Email does not exist"})
       end
     end
 
     describe "#parse_email", :vcr do      
       it "should set parse email" do
-        client.parse_email.set(:hostname => "www.example.com", :url => "www.mydomain.com/parse.php", :spam_check => "1").
-          should == {"message"=>"success"}
+        expect(client.parse_email.set(:hostname => "www.example.com", :url => "www.mydomain.com/parse.php", :spam_check => "1")).
+          to eql ({"message"=>"success"})
       end
-      
+
       it "should get parse email", :vcr do
-        client.parse_email.get.
-          should == {"parse"=>[{"hostname"=>"www.example.com", "url"=>"www.mydomain.com/parse.php", "spam_check"=>1}]}
+        expect(client.parse_email.get).
+          to eql ({"parse"=>[{"hostname"=>"www.example.com", "url"=>"www.mydomain.com/parse.php", "spam_check"=>1}]})
       end
-    
+
       it "should delete parse email", :vcr do
-        client.parse_email.delete(:hostname => "www.example.com").
-          should == {"message"=>"success"}
-        client.parse_email.get.
-          should == {"parse" => []}          
+        expect(client.parse_email.delete(:hostname => "www.example.com")).
+          to eql ({"message"=>"success"})
+        expect(client.parse_email.get).
+          to eql ({"parse" => []})
       end
     end
     
     describe "#event_notification", :vcr do      
       it "should set event notification url" do
-        client.event_notification.set(:url => "http://www.yourposturlhere.com").
-          should == {"message"=>"success"}
+        expect(client.event_notification.set(:url => "http://www.yourposturlhere.com")).
+          to eql ({"message"=>"success"})
       end
-      
+
       it "should get event notification url" do
-        client.event_notification.get.
-          should == [{"url" => "http:\/\/www.yourposturlhere.com"}]
+        expect(client.event_notification.get).
+          to eql ([{"url" => "http:\/\/www.yourposturlhere.com"}])
       end
-    
+
       it "should delete event notification url" do
-        client.event_notification.delete.
-          should == {"message"=>"success"}
+        expect(client.event_notification.delete).
+          to eql ({"message"=>"success"})
       end
     end
     
     describe "#profile", :vcr do      
       it "should get profile" do
-        client.profile.get.
-          should == [{"username"=>"user", "email"=>"user", "active"=>"true", "first_name"=>"Reseller", "last_name"=>"Customer", "address"=>"555 Any Street", "address2"=>"", "city"=>"City", "state"=>"State", "zip"=>"90000", "country"=>"US", "phone"=>"555-555-5555", "website"=>"http://Website", "website_access"=>"true"}]
+        expect(client.profile.get).
+          to eql ([{"username"=>"user", "email"=>"user", "active"=>"true", "first_name"=>"Reseller", "last_name"=>"Customer", "address"=>"555 Any Street", "address2"=>"", "city"=>"City", "state"=>"State", "zip"=>"90000", "country"=>"US", "phone"=>"555-555-5555", "website"=>"http://Website", "website_access"=>"true"}])
       end
-    
+
       it "should set first name" do
-        client.profile.set(:first_name => "test").
-          should == {"message" => "success"}
-        client.profile.get.first["first_name"].
-          should == "test"
-        client.profile.set(:first_name => "Reseller").
-          should == {"message" => "success"}
+        expect(client.profile.set(:first_name => "test")).
+          to eql ({"message" => "success"})
+        expect(client.profile.get.first["first_name"]).
+          to eql "test"
+        expect(client.profile.set(:first_name => "Reseller")).
+          to eql ({"message" => "success"})
       end
     end
   end
