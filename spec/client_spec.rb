@@ -91,7 +91,7 @@ describe "client" do
 
       it "should try delete not existing unsubscribe emails" do
         expect(client.unsubscribes.delete({email: "test@example.com"})).
-          to eql ({"message"=>"Email does not exist"})
+          to eql ({"errors" => [{"field"=>"null", "message"=>"resource not found"}]})
       end
     end
 

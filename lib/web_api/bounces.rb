@@ -22,7 +22,7 @@ module SendGridWebApi::Modules
     end
 
     # Deprecated: Count is no longer supported on SendGrid v3.
-    # As an alternative, SendGrid recommends to query depending on time frames.
+    # As an alternative, SendGrid recommends to query depending on time frames since `get` limit is 500.
     def count options = {}
       count = query_api(BOUNCES_URL, process_header_options(options)).count
       {count: count}
