@@ -27,7 +27,7 @@ describe "client" do
       end
 
       it "should try delete not existing block email" do
-        expect(client.blocks.delete({email: "test@example.com"}) ).to eql ({"message"=>"Email does not exist"})
+        expect(client.blocks.delete({email: "test@example.com"})).to eql ({"message"=>"Email does not exist"})
       end
 
       it "should get totals blocks" do
@@ -75,7 +75,7 @@ describe "client" do
     
     describe "#unsubscribe", :vcr do
       it "should add unsubscribe emails" do
-        expect(client.unsubscribes.add({ recipient_emails: ["test@example.com"] })).
+        expect(client.unsubscribes.add({recipient_emails: ["test@example.com"]})).
           to eql ({"message"=>"success"})
       end
 

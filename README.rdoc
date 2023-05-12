@@ -37,7 +37,7 @@ This module allows you to retrieve and delete email addresses that have bounced 
 
     # This method will delete all bounces from the given email.
     # * https://docs.sendgrid.com/api-reference/bounces-api/delete-a-bounce
-    # i.e: client.bounces.delete( { "on_behalf_of": @domain, email: "email@to.delete" })
+    # i.e: client.bounces.delete( { on_behalf_of: "sub_user_email", email: "email@to.delete" })
     client.bounces.delete(options)
 
     # Deprecated: Count is no longer supported on SendGrid v3.
@@ -105,7 +105,7 @@ This module allows you to retrieve and delete email addresses that have marked y
 This module allows you to add, retrieve and delete email addresses that were unsubscribed from your emails.
 
     
-    # Example @email_client.send(:unsubscribes).delete( { email: "test@example.com", "on_behalf_of": @domain })
+    # Example @email_client.send(:unsubscribes).delete( { email: "test@example.com", on_behalf_of: "sub_user_email" })
     # * https://docs.sendgrid.com/api-reference/suppressions-global-suppressions/add-recipient-addresses-to-the-global-suppression-group
     # i.e: client.unsubscribes.add( { on_behalf_of: "sub_user_email, recipient_emails: ["test@example.com"] })
     client.unsubscribes.add(options)
