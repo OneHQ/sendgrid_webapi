@@ -71,5 +71,12 @@ module SendGridWebApi
         conn.adapter Faraday.default_adapter
       end
     end
+
+    private
+    def process_header_options options
+      on_behalf_of = options.delete(:on_behalf_of)
+      options.merge!({ headers: { "on-behalf-of" => on_behalf_of } }) unless on_behalf_of.nil?
+      options
+    end
   end
 end

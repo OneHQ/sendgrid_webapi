@@ -1,8 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://api.sendgrid.com/api/unsubscribes.add.json?email=test@example.com
+    method: post
+    uri: https://api.sendgrid.com/v3/asm/suppressions/global
     body:
       encoding: US-ASCII
       string: ''

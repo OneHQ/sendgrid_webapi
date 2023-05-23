@@ -26,51 +26,102 @@ for sendgrid v2 support
 === Bounces
 This module allows you to retrieve and delete email addresses that have bounced from emails that you've delivered.
 
-    client.bounces.get(options)
+    # Retrieve all of your bounces.
+    # A maximum of 500 bounces will be returned per query.
+    # You can use the offset and limit parameters to retrieve more or less than 500 results.
+    # You can use the start_time and end_time parameters to filter by time frames.
+    # * https://docs.sendgrid.com/api-reference/bounces-api/retrieve-all-bounces
+    # i.e client.bounces.get({ "on_behalf_of": "sub_user_email"})
+    # i.e using limit/offset: client.bounces.get({ on_behalf_of: "sub_user_email", limit: 100, offset: 1 })
+    client.bounces.get (options)
 
-    client.bounces.delete(:email => "email@example.com", :foor => "bar")
+    # This method will delete all bounces from the given email.
+    # * https://docs.sendgrid.com/api-reference/bounces-api/delete-a-bounce
+    # i.e: client.bounces.delete( { on_behalf_of: "sub_user_email", email: "email@to.delete" })
+    client.bounces.delete(options)
 
+    # Deprecated: Count is no longer supported on SendGrid v3.
+    # As an alternative, SendGrid recommends to query depending on time frames since `get` limit is 500.
+    # Deprecated, under the hood it's doing a get an returning the count
     client.blocks.count
 
-* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/bounces.html
+* options are available here: https://docs.sendgrid.com/api-reference/bounces-api
 
 === Blocks
 This module allows you to retrieve and delete email addresses that were blocked by their ISP. These emails are not suppressed and are just for information.
-
+    # Retrieve all of your blocks.
+    # A maximum of 500 blocks will be returned per query.
+    # You can use the offset and limit parameters to retrieve more or less than 500 results.
+    # You can use the start_time and end_time parameters to filter by time frames.
+    #* https://docs.sendgrid.com/api-reference/blocks-api/retrieve-all-blocks
+    # i.e: client.blocks.get({ on_behalf_of: "sub_user_email", limit: 100, offset: 1 })
     client.blocks.get(options)
+    
 
-    client.blocks.delete(:email => "email@example.com", :foor => "bar")
-
+    # This method will delete all blocks from the given email
+    # * https://docs.sendgrid.com/api-reference/blocks-api/delete-blocks
+    # i.e: client.blocks.delete( { on_behalf_of: "sub_user_email", email: "email@example.com" })
+    client.blocks.delete(options)
+    
+    # Deprecated: Count is no longer supported on SendGrid v3.
+    # As an alternative, SendGrid recommends to query depending on time frames since `get` limit is 500.
     client.blocks.count
 
-* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/blocks.html
+* options are available here: https://docs.sendgrid.com/api-reference/blocks-api
 
 === Invalid Email
 This module allows you to retrieve and delete email addresses that you've sent to that are invalid email addresses.
-
+    # Retrieve a list of all invalid email addresses.
+    # You can use the offset and limit parameters to retrieve a custom number of results.
+    # You can use the start_time and end_time parameters to filter by time frames.
+    # * https://docs.sendgrid.com/api-reference/invalid-e-mails-api/retrieve-all-invalid-emails
+    # i.e: client.invalid_emails.get({ on_behalf_of: "sub_user_email", limit: 100, offset: 1 })
     client.invalid_emails.get(options)
 
-    client.invalid_emails.delete(:email => "email@example.com", :foor => "bar")
+    # This method will delete all invalid_emails from the given email
+    # * https://docs.sendgrid.com/api-reference/invalid-e-mails-api/delete-a-specific-invalid-email
+    # i.e: client.invalid_emails.delete( { on_behalf_of: "sub_user_email", email: "email@example.com" })
+    client.invalid_emails.delete(options)
 
-* options are available here: http://sendgrid.com/docs/API_Reference/Web_API/invalid_emails.html
+* options are available here: https://docs.sendgrid.com/api-reference/invalid-e-mails-api
 
 === Spam Report
 This module allows you to retrieve and delete email addresses that have marked your emails as SPAM.
-
+    # Retrieve a list of all spam reports.
+    # You can use the offset and limit parameters to retrieve a custom number of results.
+    # You can use the start_time and end_time parameters to filter by time frames.
+    # * https://docs.sendgrid.com/api-reference/spam-reports-api/retrieve-all-spam-reports
+    # i.e: client.spam.get({ on_behalf_of: "sub_user_email", limit: 100, offset: 1 })
     client.spam.get(options)
 
-    client.spam.delete(:email => "email@example.com", :foor => "bar")
+    # This method will delete all spam_reports from the given email.
+    # * https://docs.sendgrid.com/api-reference/spam-reports-api/delete-a-specific-spam-report
+    # i.e: client.spam.delete( { on_behalf_of: "sub_user_email", email: "email@example.com" })
+    client.spam.delete(options)
 
 * options are available here: http://sendgrid.com/docs/API_Reference/Web_API/spam_reports.html
 
 === Unsubscribes
 This module allows you to add, retrieve and delete email addresses that were unsubscribed from your emails.
 
-    client.unsubscribes.add(:email => "email@example.com", :foor => "bar")
+    
+    # Example @email_client.send(:unsubscribes).delete( { email: "test@example.com", on_behalf_of: "sub_user_email" })
+    # * https://docs.sendgrid.com/api-reference/suppressions-global-suppressions/add-recipient-addresses-to-the-global-suppression-group
+    # i.e: client.unsubscribes.add( { on_behalf_of: "sub_user_email, recipient_emails: ["test@example.com"] })
+    client.unsubscribes.add(options)
 
+    # Retrieve a list of all email address that are globally suppressed.
+    # You can use the offset and limit parameters to retrieve a custom number of results.
+    # You can use the start_time and end_time parameters to filter by time frames.
+    # * https://docs.sendgrid.com/api-reference/suppressions-global-suppressions/retrieve-all-global-suppressions
+    # client.unsubscribes.get({ on_behalf_of: "sub_user_email", limit: 100, offset: 1 })
     client.unsubscribes.get(options)
 
-    client.unsubscribes.delete(:email => "email@example.com", :foor => "bar")
+
+    # This method will delete all unsubscribes from the given email
+    # * https://docs.sendgrid.com/api-reference/suppressions-global-suppressions/delete-a-global-suppression
+    # i.e: client.unsubscribes.delete( { on_behalf_of: "sub_user_email", email: "email@example.com" })
+    client.unsubscribes.delete(options)
 
 * options are available here: http://sendgrid.com/docs/API_Reference/Web_API/unsubscribes.html
 

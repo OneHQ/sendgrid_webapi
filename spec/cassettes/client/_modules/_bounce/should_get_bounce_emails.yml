@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/bounces.get.json
+    uri: https://api.sendgrid.com/v3/suppression/bounces
     body:
       encoding: US-ASCII
       string: ''

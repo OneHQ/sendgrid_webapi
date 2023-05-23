@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.sendgrid.com/api/blocks.count.json
+    uri: https://api.sendgrid.com/v3/suppression/blocks
     body:
       encoding: US-ASCII
       string: ''
@@ -30,7 +30,7 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"count": 0}'
+      string: '[]'
     http_version: 
   recorded_at: Fri, 17 Jan 2014 01:37:40 GMT
 recorded_with: VCR 2.8.0
