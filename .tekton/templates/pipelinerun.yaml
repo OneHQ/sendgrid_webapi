@@ -1,0 +1,49 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  name: {{ .Release.Name }}-{{ .Release.Revision }}
+  annotations:
+    "helm.sh/hook": post-upgrade,post-install
+spec:
+  serviceAccountName: build-bot
+  params:
+  - name: ci-image-name
+    value: 237082684006.dkr.ecr.us-east-2.amazonaws.com/{{ .Values.gem }}-ci
+  - name: gem-name
+    value: "{{ .Values.gem }}"
+  - name: publish
+    value: '{{ .Values.publish }}'
+  - name: git-url
+    value: "https://{{ .Values.git.provider }}/{{ .Values.git.organization }}/{{ .Values.git.repository }}.git"
+  - name: git-sha
+    value: "{{ .Values.git.sha }}"
+  - name: git-ref
+    value: "{{ required "Required .Values.git.ref" .Values.git.ref }}"
+  - name: rubyVersion
+    value: "{{ .Values.rubyVersion }}"
+  workspaces:
+
+
+  pipelineRef:
+    name: gem-delivery
+  timeout: 1h30m0s
+  podTemplate:
+    volumes:
+    - name: oidc-token
+      projected:
+        sources:
+          - serviceAccountToken:
+              path: oidc-token
+              expirationSeconds: 1800
+
+  workspaces:
+    - name: git-source
+      volumeClaimTemplate:
+        spec:
+          storageClassName: rwm
+          accessModes:
+            - ReadWriteMany # access mode may affect how you can use this volume in parallel tasks
+          resources:
+            requests:
+              storage: 1Gi
+              

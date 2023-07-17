@@ -1,0 +1,17 @@
+publish: false
+
+gem: &gem sendgrid_webapi
+git:
+  provider: github.com
+  organization: OneHQ
+  repository: *gem
+
+global:
+  taskAnnotations: 
+    vault.security.banzaicloud.io/vault-addr: "https://vault-onehq.apps.hub.internal.onehq.com"
+    vault.security.banzaicloud.io/vault-path: "jwt-hub"
+    vault.security.banzaicloud.io/vault-auth-method: "jwt"
+    vault.security.banzaicloud.io/vault-tls-secret: "custom-trusted-ca"  
+  gem: *gem
+  rubyVersion: 3.0.2
+  mountGemDockerfile: true

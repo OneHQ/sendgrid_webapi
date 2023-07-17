@@ -1,0 +1,6 @@
+dependencies:
+- name: gem-delivery
+  repository: oci://us-docker.pkg.dev/onehq-production/onehq-public/
+  version: 0.1.0-dev.7
+digest: sha256:b52b9dc05efeb3ce5eaa793726defb2787e0f27baa6effd2040c998f7be0adce
+generated: "2021-03-27T22:26:28.397590199+01:00"
