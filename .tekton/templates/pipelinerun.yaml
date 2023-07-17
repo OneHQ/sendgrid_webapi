@@ -21,6 +21,8 @@ spec:
     value: "{{ required "Required .Values.git.ref" .Values.git.ref }}"
   - name: rubyVersion
     value: "{{ .Values.rubyVersion }}"
+  - name: run-rubocop
+    value: "{{ .Values.runRubocop }}"
   workspaces:
 
 
