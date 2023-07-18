@@ -23,6 +23,8 @@ spec:
     value: "{{ .Values.rubyVersion }}"
   - name: run-rubocop
     value: "{{ .Values.runRubocop }}"
+  - name: gem-repository
+    value: "{{ .Values.gemRepository }}"
   workspaces:
 
 

@@ -16,3 +16,4 @@ global:
   rubyVersion: 3.0.2
   mountGemDockerfile: true
   runRubocop: "false"
+  gemRepository: rubygems
