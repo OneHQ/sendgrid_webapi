@@ -1,0 +1,14 @@
+apiVersion: v2
+name: pipeline
+description: A Helm chart for Kubernetes
+
+type: application
+
+version: 0.1.0
+
+dependencies:
+- name: ruby-pipelines
+  alias: delivery
+  version: "0.2.0-dev.2"
+  repository: "oci://public.ecr.aws/c6o8b8d1"
+

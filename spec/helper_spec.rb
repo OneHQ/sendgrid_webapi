@@ -30,11 +30,10 @@ describe "helper" do
       apps = { :opentrack => {:name => "eventnotify", :processed => "0", :dropped => "1", :deferred => "1",
                               :delivered => "0", :bounce => "1", :click => "1", :open => "1", :unsubscribe => "1", :spamreport => "1", 
                               :url => "https://example.com"},
-               :clicktrack => {:enable_text => "1"},
-               :opentrack => {}
+               :clicktrack => {}
       }
   
-      @users = {"test-6" => {:account => user_hash, :applications => apps, :assigned_ips => ["192.254.126.178"]}}
+      @users = {"test-6" => {:account => user_hash, :applications => apps, :assigned_ips => []}}
       
     end
     
