@@ -20,11 +20,11 @@ spec:
   - name: git-ref
     value: "{{ required "Required .Values.git.ref" .Values.git.ref }}"
   - name: rubyVersion
-    value: "{{ .Values.rubyVersion }}"
+    value: "{{ .Values.global.rubyVersion }}"
   - name: run-rubocop
-    value: "{{ .Values.runRubocop }}"
+    value: "{{ .Values.global.runRubocop }}"
   - name: gem-repository
-    value: "{{ .Values.gemRepository }}"
+    value: "{{ .Values.global.gemRepository }}"
   workspaces:
 
 
