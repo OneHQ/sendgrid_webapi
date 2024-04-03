@@ -8,7 +8,7 @@ spec:
   serviceAccountName: build-bot
   params:
   - name: ci-image-name
-    value: 237082684006.dkr.ecr.us-east-2.amazonaws.com/{{ .Values.gem }}-ci
+    value: onehqdpp.azurecr.io/{{ .Values.gem }}-ci
   - name: gem-name
     value: "{{ .Values.gem }}"
   - name: publish
