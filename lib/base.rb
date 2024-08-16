@@ -1,4 +1,6 @@
-require 'faraday_middleware'
+if Gem::Version.new(Faraday::VERSION) < Gem::Version.new('2.0')
+  require 'faraday_middleware'
+end
 
 module SendGridWebApi
   class Base
