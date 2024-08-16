@@ -23,7 +23,7 @@ http_interactions:
       Date:
       - Fri, 17 Jan 2014 01:37:40 GMT
       Content-Type:
-      - text/html
+      - application/json
       Transfer-Encoding:
       - chunked
       Connection:
