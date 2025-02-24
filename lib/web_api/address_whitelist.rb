@@ -16,8 +16,8 @@ module SendGridWebApi::Modules
       query_patch_api(ADDRESS_WHITELIST_URL, process_header_options(options))
     end
 
-    # Remove an email address from the whitelist.
-    def remove options = {}
+    # Delete an email address from the whitelist.
+    def delete options = {}
       query_patch_api(ADDRESS_WHITELIST_URL, process_header_options(options))
     end
   end
