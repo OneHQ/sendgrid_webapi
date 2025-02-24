@@ -29,13 +29,11 @@ describe "client" do
 
       it "should add email to whitelist" do
         response = client.address_whitelist.add({ list: ["new@example.com"] })
-        puts "response 2: #{response}"
         expect(response["list"]).to include("new@example.com")
       end
     
       it "should delete email from whitelist" do
         response = client.address_whitelist.delete({ email: "test2@example.com" })
-        puts "response 3: #{response}"
         expect(response["list"]).not_to include("test2@example.com")
       end
     end
