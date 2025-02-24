@@ -1,5 +1,5 @@
 #loading modules
-%w(bounces spam blocks invalid_emails unsubscribes parse event_notification stats profile mail).each do |mod|
+%w(address_whitelist bounces spam blocks invalid_emails unsubscribes parse event_notification stats profile mail).each do |mod|
   require "web_api/" + mod
 end
 
@@ -42,6 +42,10 @@ module SendGridWebApi::Modules
 
   def mail
     @mail_instance ||= Mail.new(@api_key)
+  end
+
+  def address_whitelist
+    @address_whitelist_instance ||= AddressWhitelist.new(@api_key)
   end
   
   def sub_user

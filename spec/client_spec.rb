@@ -21,6 +21,23 @@ describe "client" do
   end
   
   describe "#modules", :vcr do
+    describe "#address_whitelist", :vcr do
+      it "should get address whitelist" do
+        response = client.address_whitelist.get
+        expect(response["list"]).to eql ["test@example.com", "test2@example.com"]
+      end
+
+      it "should add email to whitelist" do
+        response = client.address_whitelist.add({ list: ["new@example.com"] })
+        expect(response["list"]).to include("new@example.com")
+      end
+    
+      it "should delete email from whitelist" do
+        response = client.address_whitelist.delete({ email: "test2@example.com" })
+        expect(response["list"]).not_to include("test2@example.com")
+      end
+    end
+
     describe "#block" do
       it "should get block emails" do
         expect(client.blocks.get).to eql []
