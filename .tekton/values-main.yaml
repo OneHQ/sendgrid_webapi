@@ -3,12 +3,51 @@ publish: true
 delivery:
   rbac:
     rolebindings:
-      - role: edit
+      - role: cr_admin_pipes
+        name: adminpipe
         subjects:
-          - kind: Group
-            name: hq-platform
-
-      - role: view
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_release_adminpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygemsadminallpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_adminallpipe
+      - role: cr_operator_pipes
+        name: operatorpipe
         subjects:
-          - kind: Group
-            name: hq-product
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_release_operatorpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_operatorallpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_operatorallpipe
+      - role: cr_read_PLR
+        name: readPLR
+        subjects:
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_release_readpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_readallpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_readallpipe
+      - role: cr_read_rerun_PLR
+        name: readrerunPLR
+        subjects:
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_release_readrerunpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_rubygems_readrerunallpipe
+        - kind: Group
+          apiGroup: rbac.authorization.k8s.io
+          name: g_hq_readrerunallpipe
