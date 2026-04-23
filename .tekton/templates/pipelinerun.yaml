@@ -25,7 +25,6 @@ spec:
     value: "{{ .Values.global.runRubocop }}"
   - name: gem-repository
     value: "{{ .Values.global.gemRepository }}"
-  workspaces:
 
 
   pipelineRef:
